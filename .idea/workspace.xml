@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="84aa69f1-a987-45e7-9aed-082bafb339af" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-client/app/components/Hero.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-client/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-client/app/game/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/app/pages/game/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-client/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-client/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-client/app/navbar/navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/app/components/navbar/navbar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-client/app/navbar/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/app/components/navbar/navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-client/app/navbar/sign-in.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/app/components/navbar/sign-in.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-client/app/navbar/sign-in.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/app/components/navbar/sign-in.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-client/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/package.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2W0jRurcxN3CGd5E3Nfoc26eu22" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/lang/Desktop/Projects/EcoFriend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.rcb.reactComponents" value="false" />
+        <entry key="com.haulmont.rcb.reactInspector" value="false" />
+        <entry key="com.haulmont.rcb.storybook" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web-client/app/pages" />
+      <recent name="$PROJECT_DIR$/web-client/app/components" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="84aa69f1-a987-45e7-9aed-082bafb339af" name="Changes" comment="" />
+      <created>1695876388757</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695876388757</updated>
+      <workItem from="1695876391036" duration="4281000" />
+      <workItem from="1695941122277" duration="48000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/web-client/app/components/navbar/navbar.tsx</url>
+          <line>127</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
