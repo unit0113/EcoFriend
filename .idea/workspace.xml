@@ -5,19 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84aa69f1-a987-45e7-9aed-082bafb339af" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-client/app/components/Hero.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web-client/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-client/app/game/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/app/pages/game/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-client/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-client/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-client/app/navbar/navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/app/components/navbar/navbar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-client/app/navbar/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/app/components/navbar/navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-client/app/navbar/sign-in.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/app/components/navbar/sign-in.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-client/app/navbar/sign-in.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/app/components/navbar/sign-in.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-client/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/acorn" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/acorn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/autoprefixer" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/autoprefixer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/eslint" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/eslint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/next" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/next" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/prettier" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/prettier" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tailwind" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tailwind" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tailwindcss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tailwindcss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsserver" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsserver" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/astring" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/astring" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/browserslist" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/browserslist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/cssesc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/cssesc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/he" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/he" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/jiti" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/jiti" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/js-yaml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/js-yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/json5" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/json5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/loose-envify" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/loose-envify" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/nanoid" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/nanoid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/node-which" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/node-which" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/prebuild-install" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/prebuild-install" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/rc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/rc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/resolve" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/resolve" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/rimraf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/rimraf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/semver" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/semver" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/sucrase" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/sucrase" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/sucrase-node" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/sucrase-node" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/terser" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/terser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/update-browserslist-db" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/update-browserslist-db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/uvu" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/uvu" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/webpack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.pnpm/node_modules/.bin/webpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Logo.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,27 +61,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/lang/Desktop/Projects/EcoFriend/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "ed-dev",
+    "last_opened_file_path": "/Users/lang/Desktop/Projects/EcoFriend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Users/lang/Desktop/Projects/EcoFriend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -88,6 +108,7 @@
       <updated>1695876388757</updated>
       <workItem from="1695876391036" duration="4281000" />
       <workItem from="1695941122277" duration="48000" />
+      <workItem from="1696547088219" duration="963000" />
     </task>
     <servers />
   </component>
