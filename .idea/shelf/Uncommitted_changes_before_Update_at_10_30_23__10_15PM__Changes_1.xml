@@ -1,0 +1,39 @@
+<changelist name="Uncommitted_changes_before_Update_at_10_30_23,_10_15 PM_[Changes]1" date="1698718580458" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_23,_10_15 PM_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 10/30/23, 10:15 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value=".next/cache/webpack/client-development/4.pack.gz" />
+    <option name="AFTER_PATH" value=".next/cache/webpack/client-development/4.pack.gz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_23,_10_15 PM_[Changes]1/4.pack.gz" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".next/cache/webpack/server-development/index.pack.gz.old" />
+    <option name="AFTER_PATH" value=".next/cache/webpack/server-development/index.pack.gz.old" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_23,_10_15 PM_[Changes]1/index.pack.gz.old" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".next/cache/webpack/client-development/5.pack.gz" />
+    <option name="AFTER_PATH" value=".next/cache/webpack/client-development/5.pack.gz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_23,_10_15 PM_[Changes]1/5.pack.gz" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".next/cache/webpack/server-development/2.pack.gz" />
+    <option name="AFTER_PATH" value=".next/cache/webpack/server-development/2.pack.gz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_23,_10_15 PM_[Changes]1/2.pack.gz" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".next/cache/webpack/client-development/0.pack.gz" />
+    <option name="AFTER_PATH" value=".next/cache/webpack/client-development/0.pack.gz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_23,_10_15 PM_[Changes]1/0.pack.gz" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".next/cache/webpack/server-development/1.pack.gz" />
+    <option name="AFTER_PATH" value=".next/cache/webpack/server-development/1.pack.gz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_23,_10_15 PM_[Changes]1/1.pack.gz" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".next/cache/webpack/server-development/index.pack.gz" />
+    <option name="AFTER_PATH" value=".next/cache/webpack/server-development/index.pack.gz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_30_23,_10_15 PM_[Changes]1/index.pack.gz" />
+  </binary>
+</changelist>
