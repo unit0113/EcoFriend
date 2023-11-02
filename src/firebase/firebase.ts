@@ -1,11 +1,11 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, User } from "firebase/auth";
+import {initializeApp} from "firebase/app";
+import {getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, User} from "firebase/auth";
 
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCP3dHMlwHBMJvmeVsJeaLAzyVaeLbPkl4",
+    apiKey: "place holder for actual project",
     authDomain: "lil-muffies.firebaseapp.com",
     projectId: "lil-muffies",
     appId: "1:605393816183:web:2b2b79a6d9941cce619472",
