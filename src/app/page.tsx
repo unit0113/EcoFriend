@@ -1,18 +1,18 @@
-import { type Metadata } from 'next'
+import {type Metadata} from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
 import Hero from '@/components/Hero'
-import { ContactSection } from '@/components/ContactSection'
-import { Container } from '@/components/Container'
-import { FadeIn, FadeInStagger } from '@/components/FadeIn'
-import { List, ListItem } from '@/components/List'
-import { SectionIntro } from '@/components/SectionIntro'
-import { StylizedImage } from '@/components/StylizedImage'
-import { Testimonial } from '@/components/Testimonial'
+import {ContactSection} from '@/components/ContactSection'
+import {Container} from '@/components/Container'
+import {FadeIn, FadeInStagger} from '@/components/FadeIn'
+import {List, ListItem} from '@/components/List'
+import {SectionIntro} from '@/components/SectionIntro'
+import {StylizedImage} from '@/components/StylizedImage'
+import {Testimonial} from '@/components/Testimonial'
 import muffin from '@/images/muffin.png'
 import run from '@/images/run.jpg'
-import { type Article, type MDXEntry, loadArticles } from '@/lib/mdx'
+import {type Article, loadArticles, type MDXEntry} from '@/lib/mdx'
 
 
 function Articles({
