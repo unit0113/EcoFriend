@@ -20,6 +20,7 @@ import { GridPattern } from '@/components/GridPattern'
 import { Logo, Logomark } from '@/components/Logo'
 import { Impacts } from '@/components/Impact'
 import { SocialMedia } from '@/components/SocialMedia'
+import { LoginBtnHeader } from '@/components/LoginBtnHeader'
 
 const RootLayoutContext = createContext<{
   logoHovered: boolean
@@ -81,9 +82,7 @@ function Header({
           />
         </Link>
         <div className="flex items-center gap-x-8">
-          <Button href="/login" invert={invert}>
-            Log in
-          </Button>
+          <LoginBtnHeader></LoginBtnHeader>
           <button
             ref={toggleRef}
             type="button"
