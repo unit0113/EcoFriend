@@ -5,9 +5,9 @@ import muffin from '@/images/muffin.png'
 import Link from 'next/link'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { useSession } from 'next-auth/react'
+import { signIn, useSession } from 'next-auth/react'
 
-export default function SignUp() {
+export default function signUp() {
   const router = useRouter()
 
   // Restrict if already signed in
@@ -27,44 +27,50 @@ export default function SignUp() {
 
   const handleRegister = async (e: any) => {
     e.preventDefault()
-    if (pw1 === pw2) {
-      try {
-        // Check if account already exists
-        const resUserExists = await fetch('/api/userExists', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ email }),
-        })
-
-        const { user } = await resUserExists.json()
-
-        if (user) {
-          setAccountExists(true)
-          return
-        }
-
-        // Attempt to register new account
-        const res = await fetch('/api/register', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ email, pw1 }),
-        })
-
-        if (res.ok) {
-          router.push('/game')
-        } else {
-          console.log('User registration failed')
-        }
-      } catch (error) {
-        console.log('Error during registration: ', error)
-      }
-    } else {
+    if (pw1 != pw2) {
       setPwNotSame(true)
       return
+    }
+    try {
+      // Check if account already exists
+      const resUserExists = await fetch('/api/userExists', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      })
+
+      const { user } = await resUserExists.json()
+
+      if (user) {
+        setAccountExists(true)
+        return
+      }
+
+      // Attempt to register new account
+      const res = await fetch('/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, pw1 }),
+      })
+
+      if (res.ok) {
+        const loginRes = await signIn('credentials', {
+          email,
+          password: pw1,
+          redirect: false,
+        })
+        if (loginRes && loginRes.ok) {
+          router.push('/game')
+        }
+      } else {
+        console.log('User registration failed')
+      }
+    } catch (error) {
+      console.log('Error during registration: ', error)
     }
   }
 
@@ -208,6 +214,11 @@ export default function SignUp() {
 
                 <div className="mt-6 grid grid-cols-2 gap-4">
                   <button
+                    onClick={() =>
+                      signIn('google', { redirect: false }).then(() => {
+                        router.push('/game')
+                      })
+                    }
                     type="button"
                     className="flex w-full items-center justify-center rounded-lg  bg-gray-900 px-4 py-2 text-center text-base font-semibold text-white shadow-md transition duration-200 ease-in hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2  focus:ring-offset-gray-200 "
                   >
@@ -225,6 +236,11 @@ export default function SignUp() {
                   </button>
 
                   <button
+                    onClick={() =>
+                      signIn('github', { redirect: false }).then(() => {
+                        router.push('/game')
+                      })
+                    }
                     type="button"
                     className="flex w-full items-center justify-center rounded-lg  bg-gray-900 px-4 py-2 text-center text-base font-semibold text-white shadow-md transition duration-200 ease-in hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2  focus:ring-offset-gray-200 "
                   >

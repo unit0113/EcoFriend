@@ -8,7 +8,15 @@ const userSchema = new Schema(
     },
     password: {
       type: String,
-      required: true,
+      default: null,
+    },
+    level: {
+      type: Number,
+      default: 1,
+    },
+    pledges: {
+      type: Array,
+      defult: [],
     },
   },
   { timestamps: true },
