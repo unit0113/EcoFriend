@@ -36,12 +36,47 @@ export const authOptions: NextAuthOptions = {
         }
       },
     }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_ID!,
+      clientSecret: process.env.GOOGLE_SECRET!,
+    }),
+    GithubProvider({
+      clientId: process.env.GITHUB_ID!,
+      clientSecret: process.env.GITHUB_SECRET!,
+    }),
   ],
   session: {
     strategy: 'jwt',
   },
   secret: process.env.NEXTAUTH_SECRET,
   pages: { signIn: '/login' },
+  callbacks: {
+    async signIn({ user, account }) {
+      if (account?.provider === 'google' || account?.provider === 'github') {
+        try {
+          await connectMongoDB()
+          const { email } = user
+          const userExists = await User.findOne({ email })
+
+          if (!userExists) {
+            const res = await fetch('http://localhost:3000/api/signUpOAuth', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ email }),
+            })
+            if (res.ok) {
+              return user
+            }
+          }
+        } catch (error) {
+          console.log('Error signing in with OAuth Provider')
+        }
+      }
+      return user
+    },
+  },
 }
 
 const handler = NextAuth(authOptions)
