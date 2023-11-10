@@ -1,25 +1,25 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import Page from '@/app/login/page';
+import { render } from '@testing-library/react';
+import Page from '@/app/about/page';
+import { act } from 'react-dom/test-utils'; // import act for async rendering
 
+
+jest.mock('next/navigation', () => ({
+  useRouter: () => ({ replace: jest.fn() }),
+}));
 
 describe('Page Component', () => {
+//   test('renders without crashing', async () => {
+//     await act(async () => {
+//       render(<Page />);
+//     });
+//   });
+
   test('renders without crashing', () => {
-      expect(1).toBe(1);
-     });
-     
-  // test('renders without crashing', () => {
-  //   render(<Page/>);
-  //   // Add more specific assertions if needed
-  //   expect(screen.getByText('Sign in to your account')).toBeInTheDocument();
-  // });
+    render(<Page />);
+  });
+  
 
   // test('submits the form correctly', async () => {
-  //   // Mock the useRouter hook
-  //   jest.mock('next/navigation', () => ({
-  //     useRouter: () => ({ replace: jest.fn() }),
-  //   }));
-
   //   render(<Page />);
 
   //   // Fill in form fields
