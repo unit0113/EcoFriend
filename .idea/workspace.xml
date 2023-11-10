@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="420b09dc-e4cc-4f55-9d71-cbc855fcf4a2" name="Changes" comment="user db integ - lvl,awds,team init&#10;next - pull db data &amp; test">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/register/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/register/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/app-build-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/.next/app-build-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/static/css/app/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/.next/static/css/app/layout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/trace" beforeDir="false" afterPath="$PROJECT_DIR$/.next/trace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/game/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/game/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +86,8 @@
       <updated>1698721813367</updated>
       <workItem from="1698721814378" duration="367000" />
       <workItem from="1698968722011" duration="1829000" />
-      <workItem from="1699577256107" duration="33000" />
+      <workItem from="1699577256107" duration="149000" />
+      <workItem from="1699578104240" duration="830000" />
     </task>
     <task id="LOCAL-00001" summary="embedded game">
       <option name="closed" value="true" />
@@ -110,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698884150529</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="user db integ - lvl,awds,team init&#10;next - pull db data &amp; test">
+      <option name="closed" value="true" />
+      <created>1699577299927</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699577299927</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,7 +134,8 @@
     <MESSAGE value="added fb" />
     <MESSAGE value="rebased" />
     <MESSAGE value="removed api key" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed api key" />
+    <MESSAGE value="user db integ - lvl,awds,team init&#10;next - pull db data &amp; test" />
+    <option name="LAST_COMMIT_MESSAGE" value="user db integ - lvl,awds,team init&#10;next - pull db data &amp; test" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
