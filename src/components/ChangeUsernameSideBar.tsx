@@ -16,7 +16,7 @@ function queryClient<QueryResult>(
   return fetchMap.get(username)!
 }
 
-export default function ChangeUsernameSideBar() {
+export default function ChangeUsernameSidebar() {
   const router = useRouter()
   const { data: session } = useSession()
   // Restrict if not signed in

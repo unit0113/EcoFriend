@@ -34,7 +34,7 @@ export default function ProfileSideBar() {
       title: 'Change Password',
     },
     {
-      href: '/deleteAccount',
+      href: '/profile/deleteUser',
       title: 'Delete Account',
     },
   ]

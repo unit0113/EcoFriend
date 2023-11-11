@@ -19,9 +19,13 @@ const userSchema = new Schema(
       type: Number,
       default: 1,
     },
-    pledges: {
+    awards: {
       type: Array,
       defult: [],
+    },
+    team_id: {
+      type: Number,
+      default: null,
     },
   },
   { timestamps: true },

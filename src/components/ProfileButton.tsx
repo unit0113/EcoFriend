@@ -53,11 +53,7 @@ export function ProfileButton() {
         </DropdownItem>
         <DropdownItem key="signOut">
           <Button
-            onClick={() =>
-              signOut({ redirect: false }).then(() => {
-                router.push('/')
-              })
-            }
+            onClick={() => signOut({ callbackUrl: 'http://localhost:3000/' })}
           >
             Sign out
           </Button>
