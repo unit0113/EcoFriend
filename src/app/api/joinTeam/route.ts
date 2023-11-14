@@ -22,6 +22,10 @@ export async function POST(req: NextRequest) {
       )
     }
 
+    if (team.members.length >= 4) {
+      return NextResponse.json({ message: 'Team is full' }, { status: 401 })
+    }
+
     const user = await User.findOne({ userEmail })
     await team.updateOne({ $push: { members: user._id } })
     await user.updateOne({ team_id: team._id })
