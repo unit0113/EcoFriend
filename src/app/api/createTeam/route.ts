@@ -8,6 +8,14 @@ export async function POST(req: NextRequest) {
   try {
     await connectMongoDB()
     const { name, password, userEmail } = await req.json()
+    const existingTeam = await Team.findOne({ name })
+    if (existingTeam) {
+      return NextResponse.json(
+        { message: 'Team name already exists' },
+        { status: 401 },
+      )
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10)
     const user = await User.findOne({ userEmail })
 
