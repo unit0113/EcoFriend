@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 import happy_groot from '@/images/happy_groot.png'
 import ProfileSideBar from '@/components/ProfileSideBar'
