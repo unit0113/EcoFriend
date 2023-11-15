@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="420b09dc-e4cc-4f55-9d71-cbc855fcf4a2" name="Changes" comment="user db integ - lvl,awds,team init&#10;next - pull db data &amp; test">
+    <list default="true" id="420b09dc-e4cc-4f55-9d71-cbc855fcf4a2" name="Changes" comment="added team page - activity feed, side nav bar, dashboard">
+      <change afterPath="$PROJECT_DIR$/src/components/TeamActivityFeed.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/app-build-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/.next/app-build-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/static/css/app/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/.next/static/css/app/layout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/trace" beforeDir="false" afterPath="$PROJECT_DIR$/.next/trace" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/game/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/game/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="main" />
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -30,12 +24,32 @@
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="ed-dev" />
+                    <option name="lastUsedInstant" value="1700020563" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1700020562" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -48,26 +62,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;ed-dev&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/lang/Desktop/Projects/EcoFriend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/lang/Desktop/Projects/EcoFriend/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "ed-dev",
+    "last_opened_file_path": "/Users/lang/Desktop/Projects/EcoFriend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "ts.external.directory.path": "/Users/lang/Desktop/Projects/EcoFriend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -86,8 +100,9 @@
       <updated>1698721813367</updated>
       <workItem from="1698721814378" duration="367000" />
       <workItem from="1698968722011" duration="1829000" />
-      <workItem from="1699577256107" duration="149000" />
-      <workItem from="1699578104240" duration="830000" />
+      <workItem from="1699581183734" duration="27000" />
+      <workItem from="1699733470341" duration="665000" />
+      <workItem from="1700014679336" duration="5833000" />
     </task>
     <task id="LOCAL-00001" summary="embedded game">
       <option name="closed" value="true" />
@@ -113,13 +128,13 @@
       <option name="project" value="LOCAL" />
       <updated>1698884150529</updated>
     </task>
-    <task id="LOCAL-00004" summary="user db integ - lvl,awds,team init&#10;next - pull db data &amp; test">
+    <task id="LOCAL-00004" summary="added team page - activity feed, side nav bar, dashboard">
       <option name="closed" value="true" />
-      <created>1699577299927</created>
+      <created>1700020331515</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1699577299927</updated>
+      <updated>1700020331515</updated>
     </task>
     <option name="localTasksCounter" value="5" />
     <servers />
@@ -134,8 +149,8 @@
     <MESSAGE value="added fb" />
     <MESSAGE value="rebased" />
     <MESSAGE value="removed api key" />
-    <MESSAGE value="user db integ - lvl,awds,team init&#10;next - pull db data &amp; test" />
-    <option name="LAST_COMMIT_MESSAGE" value="user db integ - lvl,awds,team init&#10;next - pull db data &amp; test" />
+    <MESSAGE value="added team page - activity feed, side nav bar, dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="added team page - activity feed, side nav bar, dashboard" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
