@@ -5,11 +5,11 @@ const userSchema = new Schema(
     email: {
       type: String,
       required: true,
-      unique: true,
+        unique: true,
     },
-    username: {
-      type: String,
-      required: true,
+      username: {
+          type: String,
+          required: true,
     },
     password: {
       type: String,
@@ -19,14 +19,14 @@ const userSchema = new Schema(
       type: Number,
       default: 1,
     },
-    awards: {
+      awards: {
       type: Array,
       defult: [],
     },
-    team_id: {
-      type: Number,
-      default: null,
-    },
+      team_id: {
+          type: Number,
+          default: null,
+      },
   },
   { timestamps: true },
 )

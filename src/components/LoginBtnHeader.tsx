@@ -1,8 +1,8 @@
 'use client'
 
-import { useSession } from 'next-auth/react'
+import {useSession} from 'next-auth/react'
 import { Button } from '@/components/Button'
-import { ProfileButton } from './ProfileButton'
+import {ProfileButton} from './ProfileButton'
 
 export function LoginBtnHeader() {
   const { data: session } = useSession()
@@ -10,7 +10,7 @@ export function LoginBtnHeader() {
   if (session) {
     return (
       <>
-        <ProfileButton></ProfileButton>
+          <ProfileButton></ProfileButton>
       </>
     )
   }

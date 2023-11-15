@@ -18,8 +18,6 @@ function Game() {
           border: 'none', // Optional: This could be added to remove the border around the iframe
         }}
       >
-        {/* This is fallback content for the iframe */}
-        <p>Your browser does not support iframes.</p>
       </iframe>
     </div>
   )

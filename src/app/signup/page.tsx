@@ -215,8 +215,8 @@ export default function signUp() {
                 <div className="mt-6 grid grid-cols-2 gap-4">
                   <button
                     onClick={() =>
-                      signIn('google', {
-                        callbackUrl: 'http://localhost:3000/game',
+                        signIn('google', {
+                            callbackUrl: 'http://localhost:3000/game',
                       })
                     }
                     type="button"
@@ -237,8 +237,8 @@ export default function signUp() {
 
                   <button
                     onClick={() =>
-                      signIn('github', {
-                        callbackUrl: 'http://localhost:3000/game',
+                        signIn('github', {
+                            callbackUrl: 'http://localhost:3000/game',
                       })
                     }
                     type="button"

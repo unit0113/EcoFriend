@@ -1,3 +1,3 @@
 export default function getDefaultUsername(email: string) {
-  return email.split('@')[0]
+    return email.split('@')[0]
 }

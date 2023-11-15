@@ -1,9 +1,5 @@
 {
-  "/profile/deleteUser/page": "app/profile/deleteUser/page.js",
-  "/api/deleteUser/route": "app/api/deleteUser/route.js",
   "/page": "app/page.js",
-  "/login/page": "app/login/page.js",
-  "/game/page": "app/game/page.js",
-  "/profile/page": "app/profile/page.js",
-  "/api/signUpOAuth/route": "app/api/signUpOAuth/route.js"
+  "/teams/page": "app/teams/page.js",
+  "/login/page": "app/login/page.js"
 }
