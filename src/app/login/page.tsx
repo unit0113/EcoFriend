@@ -169,8 +169,8 @@ export default function Page() {
                 <div className="mt-6 grid grid-cols-2 gap-4">
                   <button
                     onClick={() =>
-                      signIn('google', { redirect: false }).then(() => {
-                        router.push('/game')
+                      signIn('google', {
+                        callbackUrl: 'http://localhost:3000/game',
                       })
                     }
                     type="button"
@@ -191,8 +191,8 @@ export default function Page() {
 
                   <button
                     onClick={() =>
-                      signIn('github', { redirect: false }).then(() => {
-                        router.push('/game')
+                      signIn('github', {
+                        callbackUrl: 'http://localhost:3000/game',
                       })
                     }
                     type="button"
