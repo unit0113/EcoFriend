@@ -66,7 +66,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;ed-dev&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/lang/Desktop/Projects/EcoFriend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -85,6 +85,7 @@
       <map>
         <entry key="com.haulmont.rcb.reactComponents" value="false" />
         <entry key="com.haulmont.rcb.reactInspector" value="false" />
+        <entry key="com.haulmont.rcb.storybook" value="false" />
       </map>
     </option>
   </component>
@@ -100,7 +101,7 @@
       <workItem from="1698968722011" duration="1829000" />
       <workItem from="1699581183734" duration="27000" />
       <workItem from="1699733470341" duration="665000" />
-      <workItem from="1700014679336" duration="5833000" />
+      <workItem from="1700014679336" duration="5525000" />
     </task>
     <task id="LOCAL-00001" summary="embedded game">
       <option name="closed" value="true" />

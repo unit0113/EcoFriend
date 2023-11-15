@@ -1,7 +1,9 @@
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
 import run from '@/images/run.jpg'
-import {FadeIn} from "@/components/FadeIn";
+import {FadeIn} from '@/components/FadeIn'
+import Link from 'next/link'
+
 export default function Hero() {
     return (
         <FadeIn className="lg:order-last">
@@ -11,25 +13,31 @@ export default function Hero() {
                         Gamified Climate Change
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-gray-600">
-                        Designed with passion, knowledge, and the future in mind, EcoFriend seamlessly
-                        marries education with entertainment, offering players of all ages an immersive
-                        journey into sustainability and environmental awareness.
+                        Designed with passion, knowledge, and the future in mind, EcoFriend
+                        seamlessly marries education with entertainment, offering players of
+                        all ages an immersive journey into sustainability and environmental
+                        awareness.
                     </p>
                     <div className="mt-10 flex items-center gap-x-6">
-                        <a
+                        <Link
+                            href="/game"
                             className="rounded-md bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                         >
                             Play Now
-                        </a>
-                        <a href="/learn" className="text-sm font-semibold leading-6 text-gray-900">
+                        </Link>
+                        <Link
+                            href="/learn"
+                            className="text-sm font-semibold leading-6 text-gray-900"
+                        >
                             Learn more <span aria-hidden="true">→</span>
-                        </a>
+                        </Link>
                     </div>
-
-            </div>
-                <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
+                </div>
+                <div
+                    className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
                     <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-                        <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
+                        <div
+                            className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
                             <Image
                                 src={run}
                                 alt="App screenshot"

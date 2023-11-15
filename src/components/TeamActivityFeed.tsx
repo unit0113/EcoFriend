@@ -26,7 +26,18 @@ const activity = [
         date: '3d ago',
         dateTime: '2023-01-23T15:56',
     },
+    <
+    <
+    <
+    <
+    <
+    << HEAD
     {id: 4, type: 'pledged', person: {name: 'Boop'}, date: '2d ago', dateTime: '2023-01-24T09:12'},
+======
+=
+    {id: 4, type: 'committed', person: {name: 'Boop'}, date: '2d ago', dateTime: '2023-01-24T09:12'},
+>>>>>>>
+main
     {id: 5, type: 'left the team', person: {name: 'Beep'}, date: '6d ago', dateTime: '2023-01-23T11:03'},
 ]
 const moods = [

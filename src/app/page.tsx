@@ -14,12 +14,7 @@ import muffin from '@/images/muffin.png'
 import run from '@/images/run.jpg'
 import {type Article, loadArticles, type MDXEntry} from '@/lib/mdx'
 
-
-function Articles({
-  articles,
-}: {
-  articles: Array<MDXEntry<Article>>
-}) {
+function Articles({articles}: { articles: Array<MDXEntry<Article>> }) {
   return (
     <>
       <SectionIntro
@@ -83,9 +78,7 @@ function Multiplayer() {
         title="Team up with your friends."
         className="mt-24 sm:mt-32 lg:mt-40"
       >
-        <p>
-          Team up to track your friends sustainability score.
-        </p>
+          <p>Team up to track your friends sustainability score.</p>
       </SectionIntro>
       <Container className="mt-16">
         <div className="lg:flex lg:items-center lg:justify-end">
@@ -99,17 +92,16 @@ function Multiplayer() {
             </FadeIn>
           </div>
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
-            <ListItem title="Create Team">
-                Create a team page
-            </ListItem>
+              <ListItem title="Create Team">Create a team page</ListItem>
             <ListItem title="Set Password">
-         Set a team password that only you and your friends know
+                Set a team password that only you and your friends know
             </ListItem>
             <ListItem title="Add friends">
-      Add friends and track your sustainability scores.
+                Add friends and track your sustainability scores.
             </ListItem>
               <ListItem title="Win Prizes">
-                  Win prizes when your team contributes the highest sustainability score for the year!
+                  Win prizes when your team contributes the highest sustainability
+                  score for the year!
               </ListItem>
           </List>
         </div>
@@ -136,12 +128,11 @@ export default async function Home() {
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
               In this immersive game, you'll embark on a journey to a vibrant,
-              eco-conscious world filled with challenges, discoveries, and endless opportunities
-              to make a positive impact on the environment.
+              eco-conscious world filled with challenges, discoveries, and endless
+              opportunities to make a positive impact on the environment.
           </p>
         </FadeIn>
       </Container>
-
 
       <Articles articles={articles} />
 
@@ -149,10 +140,11 @@ export default async function Home() {
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: 'Mom', logo: run }}
       >
-          From the moment I played EcoFriend, I was captivated by its immersive world.
-          The graphics are stunning, and the attention to detail in creating eco-conscious landscapes is commendable.
-          It's evident that the developers put a lot of thought into making the game visually appealing while staying
-          true to its environmental message.
+          From the moment I played EcoFriend, I was captivated by its immersive
+          world. The graphics are stunning, and the attention to detail in
+          creating eco-conscious landscapes is commendable. It's evident that the
+          developers put a lot of thought into making the game visually appealing
+          while staying true to its environmental message.
       </Testimonial>
 
       <Multiplayer />
