@@ -1,26 +1,17 @@
 'use client'
 
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useId,
-  useRef,
-  useState,
-} from 'react'
+import {createContext, useContext, useEffect, useId, useRef, useState,} from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import {usePathname} from 'next/navigation'
 import clsx from 'clsx'
-import { motion, MotionConfig, useReducedMotion } from 'framer-motion'
-
-import { Button } from '@/components/Button'
-import { Container } from '@/components/Container'
-import { Footer } from '@/components/Footer'
-import { GridPattern } from '@/components/GridPattern'
-import { Logo, Logomark } from '@/components/Logo'
-import { Impacts } from '@/components/Impact'
-import { SocialMedia } from '@/components/SocialMedia'
-import { LoginBtnHeader } from '@/components/LoginBtnHeader'
+import {motion, MotionConfig, useReducedMotion} from 'framer-motion'
+import {Container} from '@/components/Container'
+import {Footer} from '@/components/Footer'
+import {GridPattern} from '@/components/GridPattern'
+import {Logo, Logomark} from '@/components/Logo'
+import {Impacts} from '@/components/Impact'
+import {SocialMedia} from '@/components/SocialMedia'
+import {LoginBtnHeader} from '@/components/LoginBtnHeader'
 
 const RootLayoutContext = createContext<{
   logoHovered: boolean
@@ -146,7 +137,7 @@ function Navigation() {
         <NavigationItem href="/learn">Learn More</NavigationItem>
       </NavigationRow>
       <NavigationRow>
-        <NavigationItem href="/about">The Team</NavigationItem>
+          <NavigationItem href="/about">Developers</NavigationItem>
         <NavigationItem href="/blog">Sustainability Efforts</NavigationItem>
       </NavigationRow>
     </nav>

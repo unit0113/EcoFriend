@@ -1,9 +1,8 @@
 import Link from 'next/link'
 
-import { Container } from '@/components/Container'
-import { FadeIn } from '@/components/FadeIn'
-import { Logo } from '@/components/Logo'
-import { socialMediaProfiles } from '@/components/SocialMedia'
+import {Container} from '@/components/Container'
+import {FadeIn} from '@/components/FadeIn'
+import {Logo} from '@/components/Logo'
 
 const navigation = [
   {
@@ -18,7 +17,7 @@ const navigation = [
   {
     title: 'Company',
     links: [
-      { title: 'The Team', href: '/about' },
+        {title: 'Developers', href: '/about'},
       { title: 'Our Mission', href: '/mission' },
       { title: 'Contributions', href: '/efforts' },
     ],
