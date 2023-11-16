@@ -1,14 +1,6 @@
 import {Fragment, useState} from 'react'
 import {CheckCircleIcon} from '@heroicons/react/24/solid'
-import {
-    FaceFrownIcon,
-    FaceSmileIcon,
-    FireIcon,
-    HandThumbUpIcon,
-    HeartIcon,
-    PaperClipIcon,
-    XMarkIcon,
-} from '@heroicons/react/20/solid'
+import {FaceFrownIcon, FaceSmileIcon, FireIcon, HandThumbUpIcon, HeartIcon, XMarkIcon,} from '@heroicons/react/20/solid'
 import {Listbox, Transition} from '@headlessui/react'
 
 import {Button} from '@/components/Button'
@@ -24,20 +16,10 @@ const activity = [
         },
         comment: 'I beeped then I booped.',
         date: '3d ago',
-        dateTime: '2023-01-23T15:56',
+        dateTime: '2023-01-23T15:56'
     },
-    <
-    <
-    <
-    <
-    <
-    << HEAD
+
     {id: 4, type: 'pledged', person: {name: 'Boop'}, date: '2d ago', dateTime: '2023-01-24T09:12'},
-======
-=
-    {id: 4, type: 'committed', person: {name: 'Boop'}, date: '2d ago', dateTime: '2023-01-24T09:12'},
->>>>>>>
-main
     {id: 5, type: 'left the team', person: {name: 'Beep'}, date: '6d ago', dateTime: '2023-01-23T11:03'},
 ]
 const moods = [
@@ -106,7 +88,6 @@ export default function TeamActivityFeed() {
                     </li>
                 ))}
             </ul>
-
             {/* New comment form */}
             <div className="mt-6 flex gap-x-3">
                 <form action="#" className="relative flex-auto">
@@ -126,15 +107,6 @@ export default function TeamActivityFeed() {
                     </div>
                     <div className="absolute inset-x-0 bottom-0 flex justify-between py-2 pl-3 pr-2">
                         <div className="flex items-center space-x-5">
-                            <div className="flex items-center">
-                                <button
-                                    type="button"
-                                    className="-m-2.5 flex h-10 w-10 items-center justify-center rounded-full text-gray-400 hover:text-gray-500"
-                                >
-                                    <PaperClipIcon className="h-5 w-5" aria-hidden="true"/>
-                                    <span className="sr-only">Attach a file</span>
-                                </button>
-                            </div>
                             <div className="flex items-center">
                                 <Listbox value={selected} onChange={setSelected}>
                                     {({open}) => (
