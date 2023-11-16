@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { connectMongoDB } from '@/lib/mongodb'
+import {NextRequest, NextResponse} from 'next/server'
+import {connectMongoDB} from '@/lib/mongodb'
 import Team from '@/models/team'
 import User from '@/models/user'
 import bcrypt from 'bcryptjs'
@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ message: 'New team created' }, { status: 201 })
   } catch (error) {
     return NextResponse.json(
-      { message: 'An error occured while creating a new team.' },
+        {message: 'An error occurred while creating a new team.'},
       { status: 500 },
     )
   }

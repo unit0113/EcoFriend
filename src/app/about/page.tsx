@@ -1,17 +1,16 @@
-import { type Metadata } from 'next'
+import {type Metadata} from 'next'
 import Image from 'next/image'
 
-import { Border } from '@/components/Border'
-import { ContactSection } from '@/components/ContactSection'
-import { Container } from '@/components/Container'
-import { FadeIn, FadeInStagger } from '@/components/FadeIn'
-import { GridList, GridListItem } from '@/components/GridList'
-import { PageIntro } from '@/components/PageIntro'
-import { PageLinks } from '@/components/PageLinks'
-import { SectionIntro } from '@/components/SectionIntro'
-import { StatList, StatListItem } from '@/components/StatList'
+import {Border} from '@/components/Border'
+import {ContactSection} from '@/components/ContactSection'
+import {Container} from '@/components/Container'
+import {FadeIn, FadeInStagger} from '@/components/FadeIn'
+import {GridList, GridListItem} from '@/components/GridList'
+import {PageIntro} from '@/components/PageIntro'
+import {PageLinks} from '@/components/PageLinks'
+import {SectionIntro} from '@/components/SectionIntro'
 
-import { loadArticles } from '@/lib/mdx'
+import {loadArticles} from '@/lib/mdx'
 import muffin from '@/images/muffin.png'
 
 function Culture() {
@@ -108,8 +107,7 @@ function Team() {
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description:
-    'We believe that our strength lies in our collaborative approach, which puts our clients at the center of everything we do.',
+    description: 'beep boop'
 }
 
 export default async function About() {
@@ -124,14 +122,6 @@ export default async function About() {
           </p>
         </div>
       </PageIntro>
-      <Container className="mt-16">
-        <StatList>
-          <StatListItem value="35" label="Underpaid employees" />
-          <StatListItem value="52" label="Placated clients" />
-          <StatListItem value="$25M" label="Invoices billed" />
-        </StatList>
-      </Container>
-
       <Culture />
 
       <Team />
@@ -142,7 +132,6 @@ export default async function About() {
         intro="Save the world."
         pages={blogArticles}
       />
-
       <ContactSection />
     </>
   )

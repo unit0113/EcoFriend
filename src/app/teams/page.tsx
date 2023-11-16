@@ -1,6 +1,5 @@
 'use client'
 
-
 import TeamActivityFeed from '@/components/TeamActivityFeed'
 import {HomeIcon, TrophyIcon, UsersIcon,} from '@heroicons/react/24/outline'
 
@@ -110,9 +109,7 @@ export default function Team() {
                             </div>
                         </div>
                     </div>
-
                 }</main>
-
                 <aside className="sticky top-8 hidden w-96 shrink-0 xl:block">{
                     /* Right column area */
                     <TeamActivityFeed></TeamActivityFeed>
