@@ -5,12 +5,7 @@ import React from 'react'
 import accountIcon from '@/images/account_icon.png'
 import {useRouter} from 'next/navigation'
 import {signOut, useSession} from 'next-auth/react'
-import {
-    Dropdown,
-    DropdownTrigger,
-    DropdownMenu,
-    DropdownItem,
-} from '@nextui-org/react'
+import {Dropdown, DropdownItem, DropdownMenu, DropdownTrigger,} from '@nextui-org/react'
 import {Button} from './Button'
 
 export function ProfileButton() {
@@ -42,7 +37,7 @@ export function ProfileButton() {
                     </Button>
                 </DropdownItem>
                 <DropdownItem key="team">
-                    <Button className="w-full" onClick={() => console.log('Team')}>
+                    <Button className="w-full" href="/teams" onClick={() => console.log('Team')}>
                         Team
                     </Button>
                 </DropdownItem>

@@ -1,17 +1,7 @@
 'use client'
 
-<< <
-<
-<
-<< HEAD
-import {HomeIcon, TrophyIcon, UsersIcon,} from '@heroicons/react/24/outline'
 import TeamActivityFeed from '@/components/TeamActivityFeed'
-    =======
-import TeamActivityFeed from '@/components/TeamActivityFeed'
-import {useState} from 'react'
 import {HomeIcon, TrophyIcon, UsersIcon,} from '@heroicons/react/24/outline'
-import {FaceFrownIcon, FaceSmileIcon, FireIcon, HandThumbUpIcon, HeartIcon, XMarkIcon,} from '@heroicons/react/20/solid'
->>>>>>> main
 
 const navigation = [
     {name: 'Dashboard', href: '#', icon: HomeIcon, current: true},
@@ -20,42 +10,6 @@ const navigation = [
 
 ]
 
-    <
-    <
-    <
-    <
-    <
-    << HEAD
-        =======
-        const activity=[
-        {id: 1, type: 'created', person: {name: 'Chelsea Hagon'}, date: '7d ago', dateTime: '2023-01-23T10:32'},
-        {id: 2, type: 'edited', person: {name: 'Chelsea Hagon'}, date: '6d ago', dateTime: '2023-01-23T11:03'},
-        {id: 3, type: 'sent', person: {name: 'Chelsea Hagon'}, date: '6d ago', dateTime: '2023-01-23T11:24'},
-        {
-            id: 4,
-            type: 'commented',
-            person: {
-            name: 'Chelsea Hagon',
-            imageUrl:
-            'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        },
-            comment: 'Called client, they reassured me the invoice would be paid by the 25th.',
-            date: '3d ago',
-            dateTime: '2023-01-23T15:56',
-        },
-        {id: 5, type: 'viewed', person: {name: 'Alex Curren'}, date: '2d ago', dateTime: '2023-01-24T09:12'},
-        {id: 6, type: 'paid', person: {name: 'Alex Curren'}, date: '1d ago', dateTime: '2023-01-24T09:20'},
-        ]
-        const moods = [
-        {name: 'Excited', value: 'excited', icon: FireIcon, iconColor: 'text-white', bgColor: 'bg-red-500'},
-        {name: 'Loved', value: 'loved', icon: HeartIcon, iconColor: 'text-white', bgColor: 'bg-pink-400'},
-        {name: 'Happy', value: 'happy', icon: FaceSmileIcon, iconColor: 'text-white', bgColor: 'bg-green-400'},
-        {name: 'Sad', value: 'sad', icon: FaceFrownIcon, iconColor: 'text-white', bgColor: 'bg-yellow-400'},
-        {name: 'Thumbsy', value: 'thumbsy', icon: HandThumbUpIcon, iconColor: 'text-white', bgColor: 'bg-blue-500'},
-        {name: 'I feel nothing', value: null, icon: XMarkIcon, iconColor: 'text-gray-400', bgColor: 'bg-transparent'},
-        ]
-
-        >>>>>>> main
 function classNames(...classes: any[]) {
     return classes.filter(Boolean).join(' ')
 }
@@ -65,18 +19,7 @@ const people = [
     // More people...
 ]
 export default function Team() {
-            <
-            <
-            <
-            <
-            <
-            << HEAD
     return (
-            =======
-            const [selected, setSelected] = useState(moods[5])
-            return (
-
-            >>>>>>> main
         <div className="flex min-h-full flex-col">
             <header className="shrink-0 border-b border-gray-200 bg-white">
                 <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -152,7 +95,11 @@ export default function Team() {
                                                 <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
                                                     {person.name}
                                                 </td>
-                                                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.awards}</td>
+                                                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.awards.map((award) => (
+                                                    <div>
+
+                                                    </div>
+                                                ))}</td>
                                                 <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.level}</td>
                                             </tr>
                                         ))}
@@ -162,9 +109,7 @@ export default function Team() {
                             </div>
                         </div>
                     </div>
-
                 }</main>
-
                 <aside className="sticky top-8 hidden w-96 shrink-0 xl:block">{
                     /* Right column area */
                     <TeamActivityFeed></TeamActivityFeed>
