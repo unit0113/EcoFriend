@@ -3,9 +3,9 @@
 import Image from 'next/image'
 import muffin from '@/images/muffin.png'
 import Link from 'next/link'
-import { useState } from 'react'
-import { signIn, useSession } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
+import {useState} from 'react'
+import {signIn, useSession} from 'next-auth/react'
+import {useRouter} from 'next/navigation'
 
 export default function Page() {
   const router = useRouter()
@@ -133,7 +133,7 @@ export default function Page() {
                     <div className="text-sm leading-6">
                       <a
                         href="#"
-                        className="text-grey-600 font-semibold hover:text-indigo-500"
+                        className="text-grey-600 font-semibold hover:text-grey-500"
                       >
                         Forgot password?
                       </a>

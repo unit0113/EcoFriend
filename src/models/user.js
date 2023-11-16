@@ -1,4 +1,4 @@
-import mongoose, { Schema, models } from 'mongoose'
+import mongoose, {models, Schema} from 'mongoose'
 
 const userSchema = new Schema(
   {
@@ -21,7 +21,7 @@ const userSchema = new Schema(
     },
       awards: {
       type: Array,
-      defult: [],
+          default: ['OG User: first 100 users'],
     },
       team_id: {
           type: Number,
