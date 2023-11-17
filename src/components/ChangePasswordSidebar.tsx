@@ -18,8 +18,15 @@ function queryClient<QueryResult>(
 }
 
 export default function ChangePasswordSideBar() {
-    const router = useRouter()
-    const {data: session} = useSession()
+    const router = useRouter();
+    const { data: session } = useSession();
+    const [oldPW, setOldPW] = useState('');
+    const [newPW1, setNewPW1] = useState('');
+    const [newPW2, setNewPW2] = useState('');
+    const [currentPWFail, setCurrentPWFail] = useState(false);
+    const [pwSucksError, setPwSucksError] = useState(false);
+    const [pwNotSame, setPwNotSame] = useState(false);
+
     // Restrict if not signed in
     if (!session || !session.user || !session.user.email) {
         router.push('/')
@@ -44,13 +51,6 @@ export default function ChangePasswordSideBar() {
         router.push('/profile/addPassword')
         return
     }
-
-    const [oldPW, setOldPW] = useState('')
-    const [newPW1, setNewPW1] = useState('')
-    const [newPW2, setNewPW2] = useState('')
-    const [currentPWFail, setCurrentPWFail] = useState(false)
-    const [pwSucksError, setPwSucksError] = useState(false)
-    const [pwNotSame, setPwNotSame] = useState(false)
 
     const handleSubmit = async (e: any) => {
         e.preventDefault()
