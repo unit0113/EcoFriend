@@ -4,10 +4,10 @@ import Image from 'next/image'
 import muffin from '@/images/muffin.png'
 import Link from 'next/link'
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/router'
 import { signIn, useSession } from 'next-auth/react'
 
-export default function signUp() {
+export default function SignUp() {
   const router = useRouter()
 
   // Restrict if already signed in
