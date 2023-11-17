@@ -4,7 +4,7 @@ import Image from 'next/image'
 import muffin from '@/images/muffin.png'
 import Link from 'next/link'
 import { useState } from 'react'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { signIn, useSession } from 'next-auth/react'
 
 export default function SignUp() {
