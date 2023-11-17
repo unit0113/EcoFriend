@@ -24,7 +24,7 @@ export default function ChangePasswordSideBar() {
     const [newPW1, setNewPW1] = useState('');
     const [newPW2, setNewPW2] = useState('');
     const [currentPWFail, setCurrentPWFail] = useState(false);
-    const [pwSucksError] = useState(false);
+    const [pwSucksError, setPwSucksError] = useState(false);
     const [pwNotSame, setPwNotSame] = useState(false);
 
     // Restrict if not signed in
