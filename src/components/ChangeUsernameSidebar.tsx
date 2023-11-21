@@ -2,6 +2,7 @@
 
 import { useState, use } from 'react'
 import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 
@@ -21,12 +22,13 @@ export default function ChangeUsernameSidebar() {
   const router = useRouter()
   const { data: session } = useSession()
   // Restrict if not signed in
-  if (!session || !session.user || !session.user.email) {
-    router.push('/')
-    return
-  }
+  useEffect(() => {
+    if (!session || !session.user || !session.user.email) {
+      router.push('/')
+    }
+  })
 
-  const email = session.user.email
+  const email = session?.user?.email
 
   //Retrieve username
   //https://www.youtube.com/watch?v=zwQs4wXr9Bg&t=531s
@@ -50,7 +52,7 @@ export default function ChangeUsernameSidebar() {
     e.preventDefault()
 
     try {
-      const resUpdatePassword = await fetch('/api/changeUsername', {
+      const resUpdateUsername = await fetch('/api/changeUsername', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -58,10 +60,12 @@ export default function ChangeUsernameSidebar() {
         body: JSON.stringify({ email, newUsername }),
       })
 
-      if (resUpdatePassword) {
-        fetchMap.clear()
-        router.push('/profile')
-      }
+      useEffect(() => {
+        if (resUpdateUsername) {
+          fetchMap.clear()
+          router.push('/profile')
+        }
+      })
     } catch (error) {
       console.log('Error during username update: ', error)
     }
@@ -118,10 +122,14 @@ export default function ChangeUsernameSidebar() {
                 Update Username
               </button>
             </div>
-            <button className="focus-visible:outline-grey-600 flex w-full justify-center rounded-md bg-gray-900 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
-              <Link href={'/profile'}>Cancel</Link>
-            </button>
           </form>
+          <div className="mt-8 text-lg font-bold leading-9 tracking-tight text-gray-900">
+            <form>
+              <button className="focus-visible:outline-grey-600 flex w-full justify-center rounded-md bg-gray-900 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
+                <Link href={'/profile'}>Cancel</Link>
+              </button>
+            </form>
+          </div>
         </aside>
       </div>
     </div>
