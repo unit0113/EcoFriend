@@ -1,5 +1,8 @@
 {
   "/page": "app/page.js",
-  "/teams/page": "app/teams/page.js",
-  "/login/page": "app/login/page.js"
+  "/game/page": "app/game/page.js",
+  "/login/page": "app/login/page.js",
+  "/profile/page": "app/profile/page.js",
+  "/profile/changeUsername/page": "app/profile/changeUsername/page.js",
+  "/api/getUserData/route": "app/api/getUserData/route.js"
 }
