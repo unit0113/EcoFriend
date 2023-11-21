@@ -1,5 +1,7 @@
 {
   "/page": "app/page.js",
-  "/teams/page": "app/teams/page.js",
-  "/login/page": "app/login/page.js"
+  "/game/page": "app/game/page.js",
+  "/profile/page": "app/profile/page.js",
+  "/login/page": "app/login/page.js",
+  "/api/signUpOAuth/route": "app/api/signUpOAuth/route.js"
 }

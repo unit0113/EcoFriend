@@ -67,14 +67,14 @@ export const authOptions: NextAuthOptions = {
               body: JSON.stringify({ email }),
             })
             if (res.ok) {
-              return user
+              return true
             }
           }
         } catch (error) {
           console.log('Error signing in with OAuth Provider')
         }
       }
-      return user
+      return true
     },
   },
 }
