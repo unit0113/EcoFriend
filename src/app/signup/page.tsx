@@ -5,6 +5,7 @@ import muffin from '@/images/muffin.png'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 import { signIn, useSession } from 'next-auth/react'
 
@@ -68,7 +69,9 @@ export default function SignUp() {
         })
 
         if (loginRes && loginRes.ok) {
-          router.replace('/game')
+          useEffect(() => {
+            router.replace('/game')
+          })
         }
       } else {
         console.log('User registration failed')

@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState , useEffect} from 'react'
 import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 
@@ -10,7 +11,7 @@ export default function DeleteUserSidebar() {
   const { data: session } = useSession()
   // Restrict if not signed in
   useEffect(() => {
-    if (session) {
+    if (session || !session.user || !session.user.email) {
       router.push('/')
     }
   }, [session])
