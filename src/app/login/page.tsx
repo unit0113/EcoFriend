@@ -3,9 +3,10 @@
 import Image from 'next/image'
 import muffin from '@/images/muffin.png'
 import Link from 'next/link'
-import {useState} from 'react'
-import {signIn, useSession} from 'next-auth/react'
-import {useRouter} from 'next/navigation'
+import { useState } from 'react'
+import { signIn, useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 export default function Page() {
   const router = useRouter()
@@ -35,7 +36,9 @@ export default function Page() {
         setInvalidLogin(true)
         return
       }
-      router.replace('/game')
+      useEffect(() => {
+        router.replace('/game')
+      })
     } catch (error) {
       console.log('Error signing in: ', error)
     }
@@ -133,7 +136,7 @@ export default function Page() {
                     <div className="text-sm leading-6">
                       <a
                         href="#"
-                        className="text-grey-600 font-semibold hover:text-grey-500"
+                        className="text-grey-600 hover:text-grey-500 font-semibold"
                       >
                         Forgot password?
                       </a>
@@ -169,8 +172,8 @@ export default function Page() {
                 <div className="mt-6 grid grid-cols-2 gap-4">
                   <button
                     onClick={() =>
-                        signIn('google', {
-                            callbackUrl: 'http://localhost:3000/game',
+                      signIn('google', {
+                        callbackUrl: 'http://localhost:3000/game',
                       })
                     }
                     type="button"
@@ -191,8 +194,8 @@ export default function Page() {
 
                   <button
                     onClick={() =>
-                        signIn('github', {
-                            callbackUrl: 'http://localhost:3000/game',
+                      signIn('github', {
+                        callbackUrl: 'http://localhost:3000/game',
                       })
                     }
                     type="button"
