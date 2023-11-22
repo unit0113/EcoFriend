@@ -69,9 +69,7 @@ export default function SignUp() {
         })
 
         if (loginRes && loginRes.ok) {
-          useEffect(() => {
-            router.replace('/game')
-          })
+          router.replace('/game')
         }
       } else {
         console.log('User registration failed')
