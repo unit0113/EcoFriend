@@ -4,7 +4,6 @@ import Image from 'next/image'
 import React from 'react'
 import accountIcon from '@/images/account_icon.png'
 import { useRouter } from 'next/navigation'
-import { useEffect } from 'react'
 import { signOut, useSession } from 'next-auth/react'
 import {
   Dropdown,

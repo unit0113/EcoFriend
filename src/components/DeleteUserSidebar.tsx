@@ -10,10 +10,10 @@ export default function DeleteUserSidebar() {
   const { data: session } = useSession()
   // Restrict if not signed in
   useEffect(() => {
-    if (!session || !session.user || !session.user.email) {
+    if (session) {
       router.push('/')
     }
-  })
+  }, [session])
 
   const email = session?.user?.email
 
