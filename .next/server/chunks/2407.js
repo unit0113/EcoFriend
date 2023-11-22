@@ -1,1 +1,0 @@
-"use strict";exports.id=2407,exports.ids=[2407],exports.modules={52407:(e,t,r)=>{r.r(t),r.d(t,{$$typeof:()=>p,__esModule:()=>d,default:()=>i});var s=r(95153);let o=(0,s.createProxy)(String.raw`C:\Users\unit0\Desktop\Python\EcoFriend\src\app\login\page.tsx`),{__esModule:d,$$typeof:p}=o,a=o.default,i=a}};
