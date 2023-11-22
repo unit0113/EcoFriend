@@ -36,9 +36,8 @@ export default function Page() {
         setInvalidLogin(true)
         return
       }
-      useEffect(() => {
-        router.replace('/game')
-      })
+
+      router.replace('/game')
     } catch (error) {
       console.log('Error signing in: ', error)
     }
