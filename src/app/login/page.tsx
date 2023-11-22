@@ -6,7 +6,6 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
-import { useEffect } from 'react'
 
 export default function Page() {
   const router = useRouter()
