@@ -1,21 +1,22 @@
 'use client'
 
-import { useState, use } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 
-const fetchMap = new Map<string, Promise<any>>()
-
-function queryClient<QueryResult>(
-  username: string,
-  query: () => Promise<QueryResult>,
-): Promise<QueryResult> {
-  if (!fetchMap.has(username)) {
-    fetchMap.set(username, query())
-  }
-  return fetchMap.get(username)!
+const getUserName = async (email: any, setUsername: Function) => {
+  const res = await fetch('/api/getUserData', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email }),
+    cache: 'no-store',
+  })
+  const userData = await res.json()
+  setUsername(userData.user.username)
 }
 
 export default function ChangeUsernameSidebar() {
@@ -26,30 +27,29 @@ export default function ChangeUsernameSidebar() {
     if (!session || !session.user || !session.user.email) {
       router.push('/')
     }
-  })
+  }, [])
 
   const email = session?.user?.email
 
   //Retrieve username
-  //https://www.youtube.com/watch?v=zwQs4wXr9Bg&t=531s
-  const userData = use(
-    queryClient('user', () =>
-      fetch('/api/getUserData', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      }).then((res) => res.json()),
-    ),
-  )
-  const username = userData.user.username
+  const [username, setUsername] = useState('')
+  useEffect(() => {
+    const getName = async () => {
+      await getUserName(email, setUsername)
+    }
+    getName()
+  })
 
   const [newUsername, setnewUsername] = useState('')
   const [usernameTaken, setUsernameTaken] = useState(false)
+  const [usernameProvided, setUsernameProvided] = useState(true)
 
   const handleSubmit = async (e: any) => {
     e.preventDefault()
+    if (newUsername === '') {
+      setUsernameProvided(false)
+      return
+    }
 
     try {
       const resUpdateUsername = await fetch('/api/changeUsername', {
@@ -60,12 +60,9 @@ export default function ChangeUsernameSidebar() {
         body: JSON.stringify({ email, newUsername }),
       })
 
-      useEffect(() => {
-        if (resUpdateUsername) {
-          fetchMap.clear()
-          router.push('/profile')
-        }
-      })
+      if (resUpdateUsername) {
+        router.push('/profile')
+      }
     } catch (error) {
       console.log('Error during username update: ', error)
     }
@@ -99,17 +96,22 @@ export default function ChangeUsernameSidebar() {
                   onChange={(e) => {
                     setnewUsername(e.target.value)
                     setUsernameTaken(false)
+                    setUsernameProvided(true)
                   }}
                   id="username"
                   name="username"
                   type="username"
-                  required
                   className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
               {usernameTaken && (
                 <div className="mt-2 text-sm leading-6 text-red-500">
                   Username already taken
+                </div>
+              )}
+              {!usernameProvided && (
+                <div className="mt-2 text-sm leading-6 text-red-500">
+                  Please provide a new username
                 </div>
               )}
             </div>
@@ -122,14 +124,10 @@ export default function ChangeUsernameSidebar() {
                 Update Username
               </button>
             </div>
+            <button className="focus-visible:outline-grey-600 flex w-full justify-center rounded-md bg-gray-900 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
+              <Link href={'/profile'}>Cancel</Link>
+            </button>
           </form>
-          <div className="mt-8 text-lg font-bold leading-9 tracking-tight text-gray-900">
-            <form>
-              <button className="focus-visible:outline-grey-600 flex w-full justify-center rounded-md bg-gray-900 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
-                <Link href={'/profile'}>Cancel</Link>
-              </button>
-            </form>
-          </div>
         </aside>
       </div>
     </div>
