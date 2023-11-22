@@ -1,10 +1,10 @@
 import NextAuth from 'next-auth/next'
-import { NextAuthOptions } from 'next-auth'
+import {NextAuthOptions} from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import GithubProvider from 'next-auth/providers/github'
 import GoogleProvider from 'next-auth/providers/google'
 import bcrypt from 'bcryptjs'
-import { connectMongoDB } from '@/lib/mongodb'
+import {connectMongoDB} from '@/lib/mongodb'
 import User from '@/models/user'
 
 export const authOptions: NextAuthOptions = {
@@ -51,7 +51,8 @@ export const authOptions: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   pages: { signIn: '/login' },
   callbacks: {
-    async signIn({ user, account }) {
+
+      async signIn({ user, account }) {
       if (account?.provider === 'google' || account?.provider === 'github') {
         try {
           await connectMongoDB()

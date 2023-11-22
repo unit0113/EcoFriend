@@ -23,9 +23,9 @@ const userSchema = new Schema(
       type: Array,
           default: ['OG User: first 100 users'],
     },
-      team_id: {
-          type: Number,
-          default: null,
+      team_id: { // store team id
+          type: Schema.Types.ObjectId,
+          ref: 'Team',
       },
   },
   { timestamps: true },
