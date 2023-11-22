@@ -2,6 +2,8 @@
 
 import TeamActivityFeed from '@/components/TeamActivityFeed'
 import {HomeIcon, TrophyIcon, UsersIcon,} from '@heroicons/react/24/outline'
+import React, {useEffect, useState} from 'react';
+import {useSession} from 'next-auth/react';
 
 const navigation = [
     {name: 'Dashboard', href: '#', icon: HomeIcon, current: true},
@@ -19,6 +21,34 @@ const people = [
     // More people...
 ]
 export default function Team() {
+    const [userData, setUserData] = useState(null);
+    const {data: session} = useSession();
+
+    useEffect(() => {
+        // Check if session and session.user are defined
+        if (session && session.user) {
+            fetchUserData(session.user.email);
+        }
+    }, [session]);
+
+    const fetchUserData = async (email: string | null | undefined) => {
+        try {
+            const response = await fetch('/api/getUserData', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({email}),
+            });
+            const data = await response.json();
+            if (data.user) {
+                setUserData(data.user);
+            }
+        } catch (error) {
+            console.error('Error fetching user data:', error);
+        }
+    };
+
     return (
         <div className="flex min-h-full flex-col">
             <header className="shrink-0 border-b border-gray-200 bg-white">
@@ -40,6 +70,12 @@ export default function Team() {
                                             'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
                                         )}
                                     >
+                                        {userData && (
+                                            <div>
+                                                <h3>User Data:</h3>
+                                                <pre>{JSON.stringify(userData, null, 2)}</pre>
+                                            </div>
+                                        )}
                                         <item.icon
                                             className={classNames(
                                                 item.current ? 'text-black-600' : 'text-gray-400 group-hover:text-gray-600',
@@ -113,6 +149,7 @@ export default function Team() {
                 <aside className="sticky top-8 hidden w-96 shrink-0 xl:block">{
                     /* Right column area */
                     <TeamActivityFeed></TeamActivityFeed>
+
                 }</aside>
             </div>
         </div>
