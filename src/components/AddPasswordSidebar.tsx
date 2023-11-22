@@ -40,11 +40,9 @@ export default function AddPasswordSideBar() {
         body: JSON.stringify({ email, newPW1 }),
       })
 
-      useEffect(() => {
-        if (resUpdatePassword) {
-          router.push('/profile')
-        }
-      })
+      if (resUpdatePassword) {
+        router.push('/profile')
+      }
     } catch (error) {
       console.log('Error during password update: ', error)
     }

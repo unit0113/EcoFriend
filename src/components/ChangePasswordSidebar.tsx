@@ -1,21 +1,22 @@
 'use client'
 
-import { useState, use } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 
-const fetchMap = new Map<string, Promise<any>>()
-
-function queryClient<QueryResult>(
-  username: string,
-  query: () => Promise<QueryResult>,
-): Promise<QueryResult> {
-  if (!fetchMap.has(username)) {
-    fetchMap.set(username, query())
-  }
-  return fetchMap.get(username)!
+const isPasswordNull = async (email: any, setPasswordIsNull: Function) => {
+  const res = await fetch('/api/getUserData', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email }),
+    cache: 'no-store',
+  })
+  const userData = await res.json()
+  setPasswordIsNull(userData.user.password == null)
 }
 
 export default function ChangePasswordSideBar() {
@@ -30,20 +31,16 @@ export default function ChangePasswordSideBar() {
 
   const email = session?.user?.email
 
-  const userData = use(
-    queryClient('user', () =>
-      fetch('/api/getUserData', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      }).then((res) => res.json()),
-    ),
-  )
+  const [passwordIsNull, setPasswordIsNull] = useState('')
+  useEffect(() => {
+    const getName = async () => {
+      await isPasswordNull(email, setPasswordIsNull)
+    }
+    getName()
+  }, [])
 
   useEffect(() => {
-    if (userData.user.password == null) {
+    if (passwordIsNull) {
       router.push('/profile/addPassword')
     }
   })
@@ -89,12 +86,9 @@ export default function ChangePasswordSideBar() {
         body: JSON.stringify({ email, newPW1 }),
       })
 
-      useEffect(() => {
-        if (resUpdatePassword) {
-          fetchMap.clear()
-          router.push('/profile')
-        }
-      })
+      if (resUpdatePassword) {
+        router.push('/profile')
+      }
     } catch (error) {
       console.log('Error during password update: ', error)
     }
