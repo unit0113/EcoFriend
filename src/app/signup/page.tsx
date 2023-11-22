@@ -5,7 +5,6 @@ import muffin from '@/images/muffin.png'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { useEffect } from 'react'
 
 import { signIn, useSession } from 'next-auth/react'
 
