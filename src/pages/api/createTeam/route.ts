@@ -9,7 +9,9 @@ import {getSession} from 'next-auth/client';
 export async function POST(req: NextApiRequest, res: NextApiResponse) {
     try {
         const session = await getSession({req});
-
+        if (!session) {
+            return res.status(401).json({message: 'You must be signed in to create a team'});
+        }
         await connectMongoDB()
 
         console.log('Connected to MongoDB')
