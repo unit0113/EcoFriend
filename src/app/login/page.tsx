@@ -22,7 +22,7 @@ export default function Page() {
   const [password, setPassword] = useState('')
   const [invalidLogin, setInvalidLogin] = useState(false)
 
-  const handleSubmit = async (e: any) => {
+  const HandleSubmit = async (e: any) => {
     e.preventDefault()
 
     try {
@@ -67,7 +67,7 @@ export default function Page() {
             <div className="mt-10">
               <div>
                 <form
-                  onSubmit={handleSubmit}
+                  onSubmit={HandleSubmit}
                   action="#"
                   method="POST"
                   className="space-y-6"

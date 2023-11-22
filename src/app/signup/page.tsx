@@ -9,7 +9,7 @@ import { useEffect } from 'react'
 
 import { signIn, useSession } from 'next-auth/react'
 
-export default function signUp() {
+export default function SignUp() {
   const router = useRouter()
 
   // Restrict if already signed in
@@ -29,7 +29,7 @@ export default function signUp() {
   const [pwNotSame, setPwNotSame] = useState(false)
   const [accountExists, setAccountExists] = useState(false)
 
-  const handleRegister = async (e: any) => {
+  const HandleRegister = async (e: any) => {
     e.preventDefault()
     if (pw1 != pw2) {
       setPwNotSame(true)
@@ -103,7 +103,7 @@ export default function signUp() {
             <div className="mt-10">
               <div>
                 <form
-                  onSubmit={handleRegister}
+                  onSubmit={HandleRegister}
                   action="#"
                   method="POST"
                   className="space-y-6"
