@@ -1,0 +1,1 @@
+"use strict";exports.id=5415,exports.ids=[5415],exports.modules={35415:(e,t,s)=>{s.r(t),s.d(t,{$$typeof:()=>d,__esModule:()=>a,default:()=>i});var r=s(95832);let o=(0,r.createProxy)(String.raw`C:\Users\unit0\Desktop\Python\EcoFriend\src\app\teams\page.tsx`),{__esModule:a,$$typeof:d}=o,p=o.default,i=p}};
