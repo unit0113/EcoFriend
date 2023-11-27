@@ -19,7 +19,10 @@ function queryClient<QueryResult>(
 
 export default function ChangeUsernameSidebar() {
     const router = useRouter()
+    const [newUsername, setnewUsername] = useState('')
+    const [usernameTaken, setUsernameTaken] = useState(false)
     const {data: session} = useSession()
+    
     // Restrict if not signed in
     if (!session || !session.user || !session.user.email) {
         router.push('/')
@@ -42,9 +45,6 @@ export default function ChangeUsernameSidebar() {
         ),
     )
     const username = userData.user.username
-
-    const [newUsername, setnewUsername] = useState('')
-    const [usernameTaken, setUsernameTaken] = useState(false)
 
     const handleSubmit = async (e: any) => {
         e.preventDefault()

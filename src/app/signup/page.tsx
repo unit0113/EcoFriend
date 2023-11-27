@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { signIn, useSession } from 'next-auth/react'
 
-export default function signUp() {
+export default function SignUp() {
   const router = useRouter()
 
   // Restrict if already signed in
