@@ -2,7 +2,7 @@ import {NextRequest, NextResponse} from 'next/server'
 import {connectMongoDB} from '@/lib/mongodb'
 import User from '@/models/user'
 import bcrypt from 'bcryptjs'
-import getDefaultUsername from '@/pages/api/getDefaultUsername'
+import getDefaultUsername from '@/app/api/getDefaultUsername'
 
 export async function POST(req: NextRequest) {
   try {
