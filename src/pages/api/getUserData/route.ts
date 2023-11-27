@@ -1,21 +1,18 @@
-import {NextRequest, NextResponse} from 'next/server'
+import {NextApiRequest, NextApiResponse} from 'next'
 import {connectMongoDB} from '@/lib/mongodb'
 import User from '@/models/user'
 
-export async function POST(req: NextRequest) {
+export async function POST(req: NextApiRequest, res: NextApiResponse) {
     try {
         await connectMongoDB()
-        const {email} = await req.json()
+        const {email} = await req.body()
+        console.log(email)
         const user = await User.findOne({email})
 
-        return NextResponse.json(
-            {message: 'User data retrieved', user: user},
-            {status: 201},
-        )
+        res.status(201).json({message: 'User data retrieved', user: user})
     } catch (error) {
-        return NextResponse.json(
-            {message: 'An error occurred while retrieving user data.'},
-            {status: 500},
-        )
+        res
+            .status(500)
+            .json({message: 'An error occurred while retrieving user data.'})
     }
 }
