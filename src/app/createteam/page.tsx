@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import muffin from '@/images/muffin.png'
+import muffin from '../../images/muffin.png'
 import {useState} from 'react'
 import {useRouter} from 'next/navigation'
 import {useSession} from 'next-auth/react';
@@ -35,10 +35,9 @@ export default function CreateTeam() {
                     userEmail: session?.user?.email,
                 }),
             });
-
             if (res.ok) {
                 console.log('Created team', await res.json());
-                router.push('/teams');
+                router.push('/team');
             } else {
                 console.log('Error creating team. Status code:', res.status);
             }
@@ -160,3 +159,4 @@ export default function CreateTeam() {
         </>
     )
 }
+
