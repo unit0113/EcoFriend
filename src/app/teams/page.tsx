@@ -30,7 +30,7 @@ export default function Team() {
                 <aside className="sticky top-8 hidden w-44 shrink-0 lg:block">{
                     /* Left column area */
                     <nav className="flex flex-1 flex-col" aria-label="Sidebar">
-                        <ul role="list" className="-mx-2 space-y-1">
+                        <ul className="-mx-2 space-y-1">
                             {navigation.map((item) => (
                                 <li key={item.name}>
                                     <a

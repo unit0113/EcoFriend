@@ -12,7 +12,7 @@ export function List({
 }) {
   return (
     <FadeInStagger>
-      <ul role="list" className={clsx('text-base text-neutral-600', className)}>
+      <ul className={clsx('text-base text-neutral-600', className)}>
         {children}
       </ul>
     </FadeInStagger>
