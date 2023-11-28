@@ -1,56 +1,57 @@
 'use client'
 
-import { useState, use } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 
-const fetchMap = new Map<string, Promise<any>>()
-
-function queryClient<QueryResult>(
-  username: string,
-  query: () => Promise<QueryResult>,
-): Promise<QueryResult> {
-  if (!fetchMap.has(username)) {
-    fetchMap.set(username, query())
-  }
-  return fetchMap.get(username)!
+const getUserName = async (email: any, setUsername: Function) => {
+  const res = await fetch('/api/getUserData', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email }),
+    cache: 'no-store',
+  })
+  const userData = await res.json()
+  setUsername(userData.user.username)
 }
 
 export default function ChangeUsernameSidebar() {
   const router = useRouter()
   const { data: session } = useSession()
   // Restrict if not signed in
-  if (!session || !session.user || !session.user.email) {
-    router.push('/')
-    return
-  }
+  useEffect(() => {
+    if (!session || !session.user || !session.user.email) {
+      router.push('/')
+    }
+  }, [])
 
-  const email = session.user.email
+  const email = session?.user?.email
 
   //Retrieve username
-  //https://www.youtube.com/watch?v=zwQs4wXr9Bg&t=531s
-  const userData = use(
-    queryClient('user', () =>
-      fetch('/api/getUserData', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      }).then((res) => res.json()),
-    ),
-  )
-  const username = userData.user.username
+  const [username, setUsername] = useState('')
+  useEffect(() => {
+    const getName = async () => {
+      await getUserName(email, setUsername)
+    }
+    getName()
+  }, [username])
 
   const [newUsername, setnewUsername] = useState('')
   const [usernameTaken, setUsernameTaken] = useState(false)
+  const [usernameProvided, setUsernameProvided] = useState(true)
 
   const handleSubmit = async (e: any) => {
     e.preventDefault()
+    if (newUsername === '') {
+      setUsernameProvided(false)
+      return
+    }
 
     try {
-      const resUpdatePassword = await fetch('/api/changeUsername', {
+      const resUpdateUsername = await fetch('/api/changeUsername', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -58,8 +59,7 @@ export default function ChangeUsernameSidebar() {
         body: JSON.stringify({ email, newUsername }),
       })
 
-      if (resUpdatePassword) {
-        fetchMap.clear()
+      if (resUpdateUsername) {
         router.push('/profile')
       }
     } catch (error) {
@@ -95,17 +95,22 @@ export default function ChangeUsernameSidebar() {
                   onChange={(e) => {
                     setnewUsername(e.target.value)
                     setUsernameTaken(false)
+                    setUsernameProvided(true)
                   }}
                   id="username"
                   name="username"
                   type="username"
-                  required
                   className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
               {usernameTaken && (
                 <div className="mt-2 text-sm leading-6 text-red-500">
                   Username already taken
+                </div>
+              )}
+              {!usernameProvided && (
+                <div className="mt-2 text-sm leading-6 text-red-500">
+                  Please provide a new username
                 </div>
               )}
             </div>

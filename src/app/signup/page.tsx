@@ -3,18 +3,21 @@
 import Image from 'next/image'
 import muffin from '@/images/muffin.png'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+
 import { signIn, useSession } from 'next-auth/react'
 
-export default function signUp() {
+export default function SignUp() {
   const router = useRouter()
 
   // Restrict if already signed in
   const { data: session } = useSession()
-  if (session) {
-    router.push('/game')
-  }
+  useEffect(() => {
+    if (session) {
+      router.replace('/game')
+    }
+  })
 
   // State variables for register input fields
   const [email, setEmail] = useState('')
@@ -25,7 +28,7 @@ export default function signUp() {
   const [pwNotSame, setPwNotSame] = useState(false)
   const [accountExists, setAccountExists] = useState(false)
 
-  const handleRegister = async (e: any) => {
+  const HandleRegister = async (e: any) => {
     e.preventDefault()
     if (pw1 != pw2) {
       setPwNotSame(true)
@@ -63,8 +66,9 @@ export default function signUp() {
           password: pw1,
           redirect: false,
         })
+
         if (loginRes && loginRes.ok) {
-          router.push('/game')
+          router.replace('/game')
         }
       } else {
         console.log('User registration failed')
@@ -97,7 +101,7 @@ export default function signUp() {
             <div className="mt-10">
               <div>
                 <form
-                  onSubmit={handleRegister}
+                  onSubmit={HandleRegister}
                   action="#"
                   method="POST"
                   className="space-y-6"
@@ -215,8 +219,8 @@ export default function signUp() {
                 <div className="mt-6 grid grid-cols-2 gap-4">
                   <button
                     onClick={() =>
-                        signIn('google', {
-                            callbackUrl: 'http://localhost:3000/game',
+                      signIn('google', {
+                        callbackUrl: 'http://localhost:3000/game',
                       })
                     }
                     type="button"
@@ -237,8 +241,8 @@ export default function signUp() {
 
                   <button
                     onClick={() =>
-                        signIn('github', {
-                            callbackUrl: 'http://localhost:3000/game',
+                      signIn('github', {
+                        callbackUrl: 'http://localhost:3000/game',
                       })
                     }
                     type="button"
