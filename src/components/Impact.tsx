@@ -30,7 +30,7 @@ export function Impacts({
   ...props
 }: React.ComponentPropsWithoutRef<'ul'> & { invert?: boolean }) {
   return (
-    <ul role="list" {...props}>
+    <ul {...props}>
       <li>
         <Impact name="Plastic Recycled" invert={invert}>
           312 Billion Pounds

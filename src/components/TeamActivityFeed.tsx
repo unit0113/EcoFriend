@@ -39,7 +39,7 @@ export default function TeamActivityFeed() {
     const [selected, setSelected] = useState(moods[5])
     return (
         <>
-            <ul role="list" className="space-y-6">
+            <ul className="space-y-6">
                 {activity.map((activityItem, activityItemIdx) => (
                     <li key={activityItem.id} className="relative flex gap-x-4">
                         <div
