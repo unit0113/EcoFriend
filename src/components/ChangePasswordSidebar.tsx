@@ -8,15 +8,7 @@ import Link from 'next/link'
 export default function ChangePasswordSidebar() {
   const router = useRouter()
   const { data: session } = useSession()
-  // Restrict if not signed in
-  useEffect(() => {
-    if (!session || !session.user || !session.user.email) {
-      router.push('/')
-    }
-  }, [session])
-
   const email = session?.user?.email
-
   const [oldPW, setOldPW] = useState('')
   const [newPW1, setNewPW1] = useState('')
   const [newPW2, setNewPW2] = useState('')
@@ -25,6 +17,13 @@ export default function ChangePasswordSidebar() {
   const [pwNotSame, setPwNotSame] = useState(false)
   const [hasPassword, setHasPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
+  
+  // Restrict if not signed in
+  useEffect(() => {
+    if (!session || !session.user || !session.user.email) {
+      router.push('/')
+    }
+  }, [session])
 
   useEffect(() => {
     async function fetchData() {
