@@ -8,6 +8,7 @@ import Link from 'next/link'
 export default function ChangePasswordSidebar() {
   const router = useRouter()
   const { data: session } = useSession()
+
   // Restrict if not signed in
   useEffect(() => {
     if (!session || !session.user || !session.user.email) {
@@ -17,6 +18,7 @@ export default function ChangePasswordSidebar() {
 
   const email = session?.user?.email
 
+  // Initialize state variables
   const [oldPW, setOldPW] = useState('')
   const [newPW1, setNewPW1] = useState('')
   const [newPW2, setNewPW2] = useState('')
@@ -26,6 +28,7 @@ export default function ChangePasswordSidebar() {
   const [hasPassword, setHasPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
+  // Check if user has a password
   useEffect(() => {
     async function fetchData() {
       const res = await fetch('/api/getUserData', {
@@ -47,6 +50,7 @@ export default function ChangePasswordSidebar() {
     e.preventDefault()
 
     if (hasPassword) {
+      // Check current password
       try {
         const resUserPasswordMatch = await fetch('/api/checkPassword', {
           method: 'POST',
@@ -56,6 +60,7 @@ export default function ChangePasswordSidebar() {
           body: JSON.stringify({ email, oldPW }),
         })
 
+        // Current password must match stored
         if (!resUserPasswordMatch.ok) {
           setCurrentPWFail(true)
           return
@@ -65,11 +70,13 @@ export default function ChangePasswordSidebar() {
       }
     }
 
+    // Passwords must match
     if (newPW1 != newPW2) {
       setPwNotSame(true)
       return
     }
 
+    // Attempt to change password
     try {
       const resUpdatePassword = await fetch('/api/changePassword', {
         method: 'POST',
@@ -79,6 +86,7 @@ export default function ChangePasswordSidebar() {
         body: JSON.stringify({ email, newPW1 }),
       })
 
+      // If successful, redirect to profile page
       if (resUpdatePassword) {
         router.push('/profile')
       }
@@ -86,6 +94,7 @@ export default function ChangePasswordSidebar() {
       console.log('Error during password update: ', error)
     }
   }
+  // Force page to check if user has password prior to loading either change password or add password versions
   if (isLoading) {
     return
   }

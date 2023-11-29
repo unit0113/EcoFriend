@@ -7,6 +7,8 @@ export async function POST(req: NextRequest) {
   try {
     await connectMongoDB()
     const { userEmail } = await req.json()
+
+    // Find user with provided email and team that user is member of
     const user = await User.findOne({ email: userEmail })
     const team = await Team.findOne({ _id: user.team_id })
 
@@ -17,6 +19,7 @@ export async function POST(req: NextRequest) {
       )
     }
 
+    // Return all users in identified team
     const users: any[] = []
     team.members.forEach((member: string) => {
       const memberData = User.findOne({ _id: member })

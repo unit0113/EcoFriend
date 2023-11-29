@@ -8,6 +8,7 @@ import Link from 'next/link'
 export default function DeleteUserSidebar() {
   const router = useRouter()
   const { data: session } = useSession()
+
   // Restrict if not signed in
   useEffect(() => {
     if (session) {
@@ -17,17 +18,20 @@ export default function DeleteUserSidebar() {
 
   const email = session?.user?.email
 
+  // Initialize state variables
   const [confirmEmail, setConfirmEmail] = useState('')
   const [emailNotSame, setEmailNotSame] = useState(false)
 
   const handleSubmit = async (e: any) => {
     e.preventDefault()
 
+    // Provided email must match
     if (confirmEmail != email) {
       setEmailNotSame(true)
       return
     }
 
+    // Attempt to delete user
     try {
       const resDeleteUser = await fetch('/api/deleteUser', {
         method: 'DELETE',
@@ -37,6 +41,7 @@ export default function DeleteUserSidebar() {
         body: JSON.stringify({ email }),
       })
 
+      // If successful, redirect to main page
       if (resDeleteUser) {
         signOut({ callbackUrl: 'http://localhost:3000/' })
       }

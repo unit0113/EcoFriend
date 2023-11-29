@@ -1,0 +1,25 @@
+"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+exports.id = "_rsc_src_app_game_page_tsx";
+exports.ids = ["_rsc_src_app_game_page_tsx"];
+exports.modules = {
+
+/***/ "(rsc)/./src/app/game/page.tsx":
+/*!*******************************!*\
+  !*** ./src/app/game/page.tsx ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"(rsc)/./node_modules/next/dist/server/future/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n\nfunction Game() {\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        style: {\n            display: \"flex\",\n            justifyContent: \"center\",\n            alignItems: \"center\",\n            height: \"100vh\",\n            width: \"100%\"\n        },\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"iframe\", {\n            src: \"https://itch.io/embed-upload/9070989?color=333333\",\n            allowFullScreen: true,\n            width: \"800\",\n            height: \"620\",\n            style: {\n                border: \"none\"\n            }\n        }, void 0, false, {\n            fileName: \"C:\\\\Users\\\\unit0\\\\Desktop\\\\Python\\\\EcoFriend\\\\src\\\\app\\\\game\\\\page.tsx\",\n            lineNumber: 12,\n            columnNumber: 7\n        }, this)\n    }, void 0, false, {\n        fileName: \"C:\\\\Users\\\\unit0\\\\Desktop\\\\Python\\\\EcoFriend\\\\src\\\\app\\\\game\\\\page.tsx\",\n        lineNumber: 3,\n        columnNumber: 5\n    }, this);\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Game);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9zcmMvYXBwL2dhbWUvcGFnZS50c3giLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBLFNBQVNBO0lBQ1AscUJBQ0UsOERBQUNDO1FBQ0NDLE9BQU87WUFDTEMsU0FBUztZQUNUQyxnQkFBZ0I7WUFDaEJDLFlBQVk7WUFDWkMsUUFBUTtZQUNSQyxPQUFPO1FBQ1Q7a0JBRUEsNEVBQUNDO1lBQ0NDLEtBQUk7WUFDSkMsaUJBQWlCO1lBQ2pCSCxPQUFNO1lBQ05ELFFBQU87WUFDUEosT0FBTztnQkFDTFMsUUFBUTtZQUNWOzs7Ozs7Ozs7OztBQUtSO0FBRUEsaUVBQWVYLElBQUlBLEVBQUEiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly90YWlsd2luZHVpLXN0dWRpby8uL3NyYy9hcHAvZ2FtZS9wYWdlLnRzeD84Yjk3Il0sInNvdXJjZXNDb250ZW50IjpbImZ1bmN0aW9uIEdhbWUoKSB7XHJcbiAgcmV0dXJuIChcclxuICAgIDxkaXZcclxuICAgICAgc3R5bGU9e3tcclxuICAgICAgICBkaXNwbGF5OiAnZmxleCcsIC8vIFRoaXMgbGluZSBjaGFuZ2VzIHRoZSBkaXNwbGF5IHRvIGZsZXhib3hcclxuICAgICAgICBqdXN0aWZ5Q29udGVudDogJ2NlbnRlcicsIC8vIFRoaXMgY2VudGVycyB0aGUgaWZyYW1lIGhvcml6b250YWxseVxyXG4gICAgICAgIGFsaWduSXRlbXM6ICdjZW50ZXInLCAvLyBUaGlzIGNlbnRlcnMgdGhlIGlmcmFtZSB2ZXJ0aWNhbGx5XHJcbiAgICAgICAgaGVpZ2h0OiAnMTAwdmgnLCAvLyBUaGlzIG1ha2VzIHRoZSBjb250YWluZXIgdGFrZSB1cCB0aGUgZnVsbCB2aWV3cG9ydCBoZWlnaHRcclxuICAgICAgICB3aWR0aDogJzEwMCUnLCAvLyBUaGlzIG1ha2VzIHRoZSBjb250YWluZXIgdGFrZSB1cCB0aGUgZnVsbCB2aWV3cG9ydCB3aWR0aFxyXG4gICAgICB9fVxyXG4gICAgPlxyXG4gICAgICA8aWZyYW1lXHJcbiAgICAgICAgc3JjPVwiaHR0cHM6Ly9pdGNoLmlvL2VtYmVkLXVwbG9hZC85MDcwOTg5P2NvbG9yPTMzMzMzM1wiXHJcbiAgICAgICAgYWxsb3dGdWxsU2NyZWVuPXt0cnVlfVxyXG4gICAgICAgIHdpZHRoPVwiODAwXCJcclxuICAgICAgICBoZWlnaHQ9XCI2MjBcIlxyXG4gICAgICAgIHN0eWxlPXt7XHJcbiAgICAgICAgICBib3JkZXI6ICdub25lJywgLy8gT3B0aW9uYWw6IFRoaXMgY291bGQgYmUgYWRkZWQgdG8gcmVtb3ZlIHRoZSBib3JkZXIgYXJvdW5kIHRoZSBpZnJhbWVcclxuICAgICAgICB9fVxyXG4gICAgICA+XHJcbiAgICAgIDwvaWZyYW1lPlxyXG4gICAgPC9kaXY+XHJcbiAgKVxyXG59XHJcblxyXG5leHBvcnQgZGVmYXVsdCBHYW1lXHJcbiJdLCJuYW1lcyI6WyJHYW1lIiwiZGl2Iiwic3R5bGUiLCJkaXNwbGF5IiwianVzdGlmeUNvbnRlbnQiLCJhbGlnbkl0ZW1zIiwiaGVpZ2h0Iiwid2lkdGgiLCJpZnJhbWUiLCJzcmMiLCJhbGxvd0Z1bGxTY3JlZW4iLCJib3JkZXIiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(rsc)/./src/app/game/page.tsx\n");
+
+/***/ })
+
+};
+;

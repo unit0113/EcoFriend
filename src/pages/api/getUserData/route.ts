@@ -6,6 +6,8 @@ export async function POST(req: NextApiRequest, res: NextApiResponse) {
   try {
     await connectMongoDB()
     const { email } = await req.body()
+
+    // Find user from provided email
     const user = await User.findOne({ email })
 
     res.status(201).json({ message: 'User data retrieved', user: user })

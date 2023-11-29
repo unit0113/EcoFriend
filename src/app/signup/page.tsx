@@ -30,12 +30,15 @@ export default function SignUp() {
 
   const HandleRegister = async (e: any) => {
     e.preventDefault()
+
+    // Force passwords to match
     if (pw1 != pw2) {
       setPwNotSame(true)
       return
     }
+
+    // Check if account already exists
     try {
-      // Check if account already exists
       const resUserExists = await fetch('/api/userExists', {
         method: 'POST',
         headers: {
@@ -60,6 +63,7 @@ export default function SignUp() {
         body: JSON.stringify({ email, pw1 }),
       })
 
+      // If valid, sign in with newly created account
       if (res.ok) {
         const loginRes = await signIn('credentials', {
           email,
@@ -67,6 +71,7 @@ export default function SignUp() {
           redirect: false,
         })
 
+        // Redirct to game page on successful signin
         if (loginRes && loginRes.ok) {
           router.replace('/game')
         }

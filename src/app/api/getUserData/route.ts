@@ -6,6 +6,8 @@ export async function POST(req: NextRequest) {
   try {
     await connectMongoDB()
     const { email } = await req.json()
+
+    // Find user with provided email
     const user = await User.findOne({ email })
 
     return NextResponse.json(
