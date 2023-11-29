@@ -93,7 +93,9 @@ function Deliver() {
       <div className="space-y-6 text-base text-neutral-600">
         <p>
           beep boop
-          <strong className="font-semibold text-neutral-950">beep boop</strong>
+          <strong className="font-semibold text-neutral-950">
+            beep boop
+          </strong>{' '}
           beep boop
         </p>
         <p>beep boop</p>
