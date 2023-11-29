@@ -72,6 +72,7 @@ export const authOptions: NextAuthOptions = {
           }
         } catch (error) {
           console.log('Error signing in with OAuth Provider')
+          return false
         }
       }
       return true

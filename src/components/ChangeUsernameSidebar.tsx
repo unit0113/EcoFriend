@@ -25,7 +25,7 @@ export default function ChangeUsernameSidebar() {
 
   // Restrict if not signed in
   useEffect(() => {
-    if (!session || !session.user || !session.user.email) {
+    if (!session?.user?.email) {
       router.push('/')
     }
   }, [])
@@ -42,7 +42,7 @@ export default function ChangeUsernameSidebar() {
   }, [username])
 
   // Initialize state variables
-  const [newUsername, setnewUsername] = useState('')
+  const [newUsername, setNewUsername] = useState('')
   const [usernameTaken, setUsernameTaken] = useState(false)
   const [usernameProvided, setUsernameProvided] = useState(true)
 
@@ -100,7 +100,7 @@ export default function ChangeUsernameSidebar() {
               <div className="mt-2">
                 <input
                   onChange={(e) => {
-                    setnewUsername(e.target.value)
+                    setNewUsername(e.target.value)
                     setUsernameTaken(false)
                     setUsernameProvided(true)
                   }}
