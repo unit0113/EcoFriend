@@ -11,10 +11,12 @@ const teamSchema = new Schema(
       type: String,
       default: null,
     },
-      members: [{ // store user email
-          type: String,
-          ref: 'User',
-      }],
+      members: [
+          {
+              type: Schema.Types.ObjectId,
+              ref: 'User'
+          }
+      ],
   },
   { timestamps: true },
 )
