@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { connectMongoDB } from '@/lib/mongodb'
+import {NextRequest, NextResponse} from 'next/server'
+import {connectMongoDB} from '@/lib/mongodb'
 import Team from '@/models/team'
 import User from '@/models/user'
 import bcrypt from 'bcryptjs'
@@ -17,7 +17,6 @@ export async function POST(req: NextRequest) {
 		}
 
         const {teamName, password, userEmail} = await req.json()
-        console.log('Passed req: ', teamName, password, userEmail);
 
         const team = await Team.findOne({name: teamName})
         if (!team) {
@@ -60,10 +59,9 @@ export async function POST(req: NextRequest) {
 		console.log("Passed update user");
 
 		return NextResponse.json({ message: 'Team Joined' }, { status: 201 })
-		console.log("Team Joined");
 	} catch (error) {
 		return NextResponse.json(
-		{ message: 'An error occured while joining a team.' },
+		{ message: 'An error occurred while joining a team.' },
 		{ status: 500 },
 		)
   }
