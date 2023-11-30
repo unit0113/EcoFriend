@@ -54,10 +54,7 @@ function Section({
 function Discover() {
   return (
     <Section title="Single Player" image={{ src: muffin }}>
-      <div className="space-y-6 text-base text-neutral-600">
-
-
-      </div>
+      <div className="space-y-6 text-base text-neutral-600"></div>
 
       <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
         Learn more
@@ -75,22 +72,16 @@ function Build() {
   return (
     <Section title="Multiplayer" image={{ src: muffin, shape: 1 }}>
       <div className="space-y-6 text-base text-neutral-600">
-        <p>
-            beep boop
-        </p>
-        <p>
-            beep boop
-        </p>
-        <p>
-            beep boop
-        </p>
+        <p>beep boop</p>
+        <p>beep boop</p>
+        <p>beep boop</p>
       </div>
 
       <Blockquote
         author={{ name: 'Debra Fiscal', role: 'CEO of Unseal' }}
         className="mt-12"
       >
-          beep boop
+        beep boop
       </Blockquote>
     </Section>
   )
@@ -101,41 +92,33 @@ function Deliver() {
     <Section title="Impact" image={{ src: muffin, shape: 2 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-            beep boop
+          beep boop
           <strong className="font-semibold text-neutral-950">
-              beep boop
-          </strong>
             beep boop
-        </p>
-        <p>
-            beep boop
-        </p>
-        <p>
-            beep boop
-          <strong className="font-semibold text-neutral-950">
-              beep boop
           </strong>{' '}
-            beep boop
+          beep boop
+        </p>
+        <p>beep boop</p>
+        <p>
+          beep boop
           <strong className="font-semibold text-neutral-950">
-              beep boop
-          </strong>{' '}
             beep boop
+          </strong>{' '}
+          beep boop
+          <strong className="font-semibold text-neutral-950">
+            beep boop
+          </strong>{' '}
+          beep boop
         </p>
       </div>
 
       <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
-          beep boop
+        beep boop
       </h3>
       <List className="mt-8">
-        <ListItem title="Beep">
-            beep boop
-        </ListItem>
-        <ListItem title="Beep">
-            beep boop
-        </ListItem>
-        <ListItem title="Beep">
-            beep boop
-        </ListItem>
+        <ListItem title="Beep">beep boop</ListItem>
+        <ListItem title="Beep">beep boop</ListItem>
+        <ListItem title="Beep">beep boop</ListItem>
       </List>
     </Section>
   )
@@ -151,35 +134,18 @@ function Values() {
         />
       </div>
 
-      <SectionIntro
-        eyebrow="Beeps"
-        title="Beep"
-      >
-        <p>
-            beep boop
-        </p>
+      <SectionIntro eyebrow="Beeps" title="Beep">
+        <p>beep boop</p>
       </SectionIntro>
 
       <Container className="mt-24">
         <GridList>
-          <GridListItem title="Meticulous">
-              beep boop
-          </GridListItem>
-          <GridListItem title="Efficient">
-              beep boop
-          </GridListItem>
-          <GridListItem title="Adaptable">
-              beep boop
-          </GridListItem>
-          <GridListItem title="Honest">
-              beep boop
-          </GridListItem>
-          <GridListItem title="Loyal">
-              beep boop
-          </GridListItem>
-          <GridListItem title="Innovative">
-              beep boop
-          </GridListItem>
+          <GridListItem title="Meticulous">beep boop</GridListItem>
+          <GridListItem title="Efficient">beep boop</GridListItem>
+          <GridListItem title="Adaptable">beep boop</GridListItem>
+          <GridListItem title="Honest">beep boop</GridListItem>
+          <GridListItem title="Loyal">beep boop</GridListItem>
+          <GridListItem title="Innovative">beep boop</GridListItem>
         </GridList>
       </Container>
     </div>
@@ -188,17 +154,14 @@ function Values() {
 
 export const metadata: Metadata = {
   title: 'How to Play',
-  description:
-    'htp.',
+  description: 'htp.',
 }
 
 export default function Learn() {
   return (
     <>
       <PageIntro eyebrow="learn" title="How to Play">
-        <p>
-            beep boop
-        </p>
+        <p>beep boop</p>
       </PageIntro>
 
       <div className="mt-24 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">

@@ -8,24 +8,26 @@ import Link from 'next/link'
 export default function ChangePasswordSidebar() {
   const router = useRouter()
   const { data: session } = useSession()
+
   // Restrict if not signed in
   useEffect(() => {
-    if (!session || !session.user || !session.user.email) {
+    if (!session?.user?.email) {
       router.push('/')
     }
   }, [session])
 
   const email = session?.user?.email
 
+  // Initialize state variables
   const [oldPW, setOldPW] = useState('')
   const [newPW1, setNewPW1] = useState('')
   const [newPW2, setNewPW2] = useState('')
   const [currentPWFail, setCurrentPWFail] = useState(false)
-  const [pwSucksError, setPwSucksError] = useState(false)
   const [pwNotSame, setPwNotSame] = useState(false)
   const [hasPassword, setHasPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
+  // Check if user has a password
   useEffect(() => {
     async function fetchData() {
       const res = await fetch('/api/getUserData', {
@@ -47,6 +49,7 @@ export default function ChangePasswordSidebar() {
     e.preventDefault()
 
     if (hasPassword) {
+      // Check current password
       try {
         const resUserPasswordMatch = await fetch('/api/checkPassword', {
           method: 'POST',
@@ -56,6 +59,7 @@ export default function ChangePasswordSidebar() {
           body: JSON.stringify({ email, oldPW }),
         })
 
+        // Current password must match stored
         if (!resUserPasswordMatch.ok) {
           setCurrentPWFail(true)
           return
@@ -65,11 +69,13 @@ export default function ChangePasswordSidebar() {
       }
     }
 
+    // Passwords must match
     if (newPW1 != newPW2) {
       setPwNotSame(true)
       return
     }
 
+    // Attempt to change password
     try {
       const resUpdatePassword = await fetch('/api/changePassword', {
         method: 'POST',
@@ -79,6 +85,7 @@ export default function ChangePasswordSidebar() {
         body: JSON.stringify({ email, newPW1 }),
       })
 
+      // If successful, redirect to profile page
       if (resUpdatePassword) {
         router.push('/profile')
       }
@@ -86,6 +93,7 @@ export default function ChangePasswordSidebar() {
       console.log('Error during password update: ', error)
     }
   }
+  // Force page to check if user has password prior to loading either change password or add password versions
   if (isLoading) {
     return
   }
@@ -126,7 +134,6 @@ export default function ChangePasswordSidebar() {
                     id="oldPassword"
                     name="oldPassword"
                     type="password"
-                    autoComplete="password"
                     className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
@@ -155,11 +162,6 @@ export default function ChangePasswordSidebar() {
                   className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
-              {pwSucksError && (
-                <div className="mt-2 text-sm leading-6 text-red-500">
-                  Password must suck less
-                </div>
-              )}
             </div>
 
             <div>

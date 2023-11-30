@@ -8,12 +8,15 @@ export async function POST(req: NextRequest) {
   try {
     await connectMongoDB()
     const { name, password, userEmail } = await req.json()
+
+    // Find team with provided team name
     const team = await Team.findOne({ name })
 
     if (!team) {
       return NextResponse.json({ message: 'Team not found' }, { status: 400 })
     }
 
+    // Confirm provided password is valid
     const passwordsMatch = await bcrypt.compare(password, team.password)
     if (!passwordsMatch) {
       return NextResponse.json(
@@ -22,10 +25,12 @@ export async function POST(req: NextRequest) {
       )
     }
 
+    // Confirm team is not full
     if (team.members.length >= 4) {
       return NextResponse.json({ message: 'Team is full' }, { status: 401 })
     }
 
+    // Add user to team, update user info with team id
     const user = await User.findOne({ userEmail })
     await team.updateOne({ $push: { members: user._id } })
     await user.updateOne({ team_id: team._id })

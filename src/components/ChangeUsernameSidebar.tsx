@@ -6,6 +6,7 @@ import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 
 const getUserName = async (email: any, setUsername: Function) => {
+  // Retrieve username of currently signed in user
   const res = await fetch('/api/getUserData', {
     method: 'POST',
     headers: {
@@ -21,9 +22,10 @@ const getUserName = async (email: any, setUsername: Function) => {
 export default function ChangeUsernameSidebar() {
   const router = useRouter()
   const { data: session } = useSession()
+
   // Restrict if not signed in
   useEffect(() => {
-    if (!session || !session.user || !session.user.email) {
+    if (!session?.user?.email) {
       router.push('/')
     }
   }, [])
@@ -39,17 +41,21 @@ export default function ChangeUsernameSidebar() {
     getName()
   }, [username])
 
-  const [newUsername, setnewUsername] = useState('')
+  // Initialize state variables
+  const [newUsername, setNewUsername] = useState('')
   const [usernameTaken, setUsernameTaken] = useState(false)
   const [usernameProvided, setUsernameProvided] = useState(true)
 
   const handleSubmit = async (e: any) => {
     e.preventDefault()
+
+    // Force user to provide username
     if (newUsername === '') {
       setUsernameProvided(false)
       return
     }
 
+    // Attempt to change username
     try {
       const resUpdateUsername = await fetch('/api/changeUsername', {
         method: 'POST',
@@ -59,6 +65,7 @@ export default function ChangeUsernameSidebar() {
         body: JSON.stringify({ email, newUsername }),
       })
 
+      // On success, redirect to profile page
       if (resUpdateUsername) {
         router.push('/profile')
       }
@@ -93,7 +100,7 @@ export default function ChangeUsernameSidebar() {
               <div className="mt-2">
                 <input
                   onChange={(e) => {
-                    setnewUsername(e.target.value)
+                    setNewUsername(e.target.value)
                     setUsernameTaken(false)
                     setUsernameProvided(true)
                   }}

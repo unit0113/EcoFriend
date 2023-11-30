@@ -1,5 +1,5 @@
-import {NextRequest, NextResponse} from 'next/server'
-import {connectMongoDB} from '@/lib/mongodb'
+import { NextRequest, NextResponse } from 'next/server'
+import { connectMongoDB } from '@/lib/mongodb'
 import User from '@/models/user'
 import bcrypt from 'bcryptjs'
 import getDefaultUsername from '@/app/api/getDefaultUsername'
@@ -7,14 +7,20 @@ import getDefaultUsername from '@/app/api/getDefaultUsername'
 export async function POST(req: NextRequest) {
   try {
     const { email, pw1 } = await req.json()
-      const username = getDefaultUsername(email)
+
+    // Get default username from email
+    const username = getDefaultUsername(email)
+
+    // Hash password
     const hashedPassword = await bcrypt.hash(pw1, 10)
     await connectMongoDB()
-      await User.create({
-          email: email,
-          username: username,
-          password: hashedPassword,
-      })
+
+    // Create new user
+    await User.create({
+      email: email,
+      username: username,
+      password: hashedPassword,
+    })
 
     return NextResponse.json(
       { message: 'New user registered' },

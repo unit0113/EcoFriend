@@ -1,1 +1,0 @@
-"use strict";exports.id=8561,exports.ids=[8561],exports.modules={48561:(e,t,s)=>{function getDefaultUsername(e){return e.split("@")[0]}s.r(t),s.d(t,{default:()=>getDefaultUsername})}};
