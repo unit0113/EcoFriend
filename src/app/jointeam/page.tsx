@@ -4,34 +4,41 @@ import Image from 'next/image'
 import muffin from '@/images/muffin.png'
 import {useState} from 'react'
 import {useRouter} from 'next/navigation'
+import {useSession} from 'next-auth/react';
 
-export default function JoinTeam() {
+export default function Page() {
     const router = useRouter()
 
+    // Restrict if already signed in
+    const { data: session } = useSession()
+
     // State variables for login input fields
-    const [team, setTeam] = useState('')
-    const [password, setPassword] = useState('')
-    const [invalidTeam, setInvalidTeam] = useState(false)
+    const [teamName, setTeam] = useState('')
+    const [ps, setPassword] = useState('')
+    const[ invalidTeam, setInvalidTeam ] = useState(false);
 
     const handleRegister = async (e: any) => {
         e.preventDefault()
-
         try {
             const res = await fetch('/api/joinTeam', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({team, password}),
-            })
+                body: JSON.stringify({
+                    teamName: teamName,
+                    password: ps,
+                    userEmail: session?.user?.email,
+                }),
+            });
 
-            if (!res.ok) {
-                setInvalidTeam(true)
-                return
-            }
-            router.replace('/team');
+            if (res.ok) {
+                console.log('Joined team', await res.json());
+                router.push('/team');
+              }
         } catch (error) {
             console.log('Error joining team:', error);
+            setInvalidTeam(true)
         }
     };
 
@@ -63,13 +70,10 @@ export default function JoinTeam() {
                                         </label>
                                         <div className="mt-2">
                                             <input
-                                                onChange={(e) => {
-                                                    setTeam(e.target.value)
-                                                }}
-                                                id="teamName"
+                                                onChange={(e) => setTeam(e.target.value)}
+                                                id="name"
                                                 name="teamName"
                                                 type="teamName"
-                                                autoComplete="teamName"
                                                 required
                                                 className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                             />

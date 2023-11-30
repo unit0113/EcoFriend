@@ -75,7 +75,7 @@ export default function CreateTeam() {
                                         </label>
                                         <div className="mt-2">
                                             <input
-                                                onChange={(e) => {
+                                                onChange={(e) =>
                                                     setTeam(e.target.value)
                                                 }}
                                                 id="teamName"
@@ -99,9 +99,9 @@ export default function CreateTeam() {
                                         <div className="mt-2">
                                             <input
                                                 onChange={(e) => setPw1(e.target.value)}
-                                                id="password1"
+                                                id="password"
                                                 name="password1"
-                                                type="password"
+                                                type="password1"
                                                 required
                                                 className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                             />
@@ -121,9 +121,9 @@ export default function CreateTeam() {
                                                     setPw2(e.target.value)
                                                     setPwNotSame(false)
                                                 }}
-                                                id="password2"
+                                                id="password"
                                                 name="password2"
-                                                type="password"
+                                                type="password2"
                                                 required
                                                 className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                             />

@@ -9,7 +9,6 @@ export async function POST(req: NextRequest) {
         await connectMongoDB()
 
         const {name, password, userEmail} = await req.json()
-        console.log('Passed req: ', name, password, userEmail);
 
         const existingTeam = await Team.findOne({name})
         if (existingTeam) {
