@@ -1,4 +1,4 @@
-import mongoose, { Schema, models } from 'mongoose'
+import mongoose, {models, Schema} from 'mongoose'
 
 const teamSchema = new Schema(
   {
@@ -11,10 +11,10 @@ const teamSchema = new Schema(
       type: String,
       default: null,
     },
-    members: {
-      type: Array,
-      defult: [],
-    },
+    members: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      }],
   },
   { timestamps: true },
 )
