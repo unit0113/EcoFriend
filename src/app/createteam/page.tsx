@@ -7,7 +7,7 @@ import {useRouter} from 'next/navigation'
 import {useSession} from 'next-auth/react';
 
 export default function CreateTeam() {
-    const {data: session, status} = useSession();
+    const {data: session} = useSession();
     const router = useRouter();
 
     // State variables for login input fields
@@ -76,8 +76,7 @@ export default function CreateTeam() {
                                         <div className="mt-2">
                                             <input
                                                 onChange={(e) =>
-                                                    setTeam(e.target.value)
-                                                }}
+                                                    setTeam(e.target.value)}
                                                 id="teamName"
                                                 name="teamName"
                                                 type="teamName"
