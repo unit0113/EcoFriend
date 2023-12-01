@@ -7,8 +7,8 @@ export function GridList({
   children,
   className,
 }: {
-  children: React.ReactNode
-  className?: string
+  readonly children: React.ReactNode
+  readonly className?: string
 }) {
   return (
     <FadeInStagger>
@@ -30,10 +30,10 @@ export function GridListItem({
   className,
   invert = false,
 }: {
-  title: string
-  children: React.ReactNode
-  className?: string
-  invert?: boolean
+  readonly title: string
+  readonly children: React.ReactNode
+  readonly className?: string
+  readonly invert?: boolean
 }) {
   return (
     <li

@@ -18,9 +18,9 @@ function Section({
   image,
   children,
 }: {
-  title: string
-  image: React.ComponentPropsWithoutRef<typeof StylizedImage>
-  children: React.ReactNode
+  readonly title: string
+  readonly image: React.ComponentPropsWithoutRef<typeof StylizedImage>
+  readonly children: React.ReactNode
 }) {
   return (
     <Container className="group/section [counter-increment:section]">

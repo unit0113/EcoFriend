@@ -27,7 +27,7 @@ interface Page {
   description: string
 }
 
-function PageLink({ page }: { page: Page }) {
+function PageLink({ page }: { readonly page: Page }) {
   return (
     <article key={page.href}>
       <Border
@@ -64,10 +64,10 @@ export function PageLinks({
   intro,
   className,
 }: {
-  title: string
-  pages: Array<Page>
-  intro?: string
-  className?: string
+  readonly title: string
+  readonly pages: Array<Page>
+  readonly intro?: string
+  readonly className?: string
 }) {
   return (
     <div className={clsx('relative pt-24 sm:pt-32 lg:pt-40', className)}>
