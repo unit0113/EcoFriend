@@ -10,9 +10,9 @@ export function Testimonial({
   client,
   className,
 }: {
-  children: React.ReactNode
-  client: { logo: ImageProps['src']; name: string }
-  className?: string
+  readonly children: React.ReactNode
+  readonly client: { logo: ImageProps['src']; name: string }
+  readonly className?: string
 }) {
   return (
     <div

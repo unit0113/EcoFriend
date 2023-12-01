@@ -92,7 +92,7 @@ function Deliver() {
     <Section title="Impact" image={{ src: muffin, shape: 2 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          beep boop
+          beep boop{' '}
           <strong className="font-semibold text-neutral-950">
             beep boop
           </strong>{' '}
@@ -100,7 +100,7 @@ function Deliver() {
         </p>
         <p>beep boop</p>
         <p>
-          beep boop
+          beep boop{' '}
           <strong className="font-semibold text-neutral-950">
             beep boop
           </strong>{' '}
