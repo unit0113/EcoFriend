@@ -69,8 +69,8 @@ export function SocialMedia({
   className,
   invert = false,
 }: {
-  className?: string
-  invert?: boolean
+  readonly className?: string
+  readonly invert?: boolean
 }) {
   return (
     <ul

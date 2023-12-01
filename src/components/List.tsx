@@ -7,8 +7,8 @@ export function List({
   children,
   className,
 }: {
-  children: React.ReactNode
-  className?: string
+  readonly children: React.ReactNode
+  readonly className?: string
 }) {
   return (
     <FadeInStagger>
@@ -23,8 +23,8 @@ export function ListItem({
   children,
   title,
 }: {
-  children: React.ReactNode
-  title?: string
+  readonly children: React.ReactNode
+  readonly title?: string
 }) {
   return (
     <li className="group mt-10 first:mt-0">

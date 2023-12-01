@@ -11,10 +11,10 @@ function BlockquoteWithImage({
   className,
   image,
 }: {
-  author: { name: string; role: string }
-  children: React.ReactNode
-  className?: string
-  image: ImagePropsWithOptionalAlt
+  readonly author: { name: string; role: string }
+  readonly children: React.ReactNode
+  readonly className?: string
+  readonly image: ImagePropsWithOptionalAlt
 }) {
   return (
     <figure
@@ -49,9 +49,9 @@ function BlockquoteWithoutImage({
   children,
   className,
 }: {
-  author: { name: string; role: string }
-  children: React.ReactNode
-  className?: string
+  readonly author: { name: string; role: string }
+  readonly children: React.ReactNode
+  readonly className?: string
 }) {
   return (
     <Border position="left" className={clsx('pl-8', className)}>

@@ -11,7 +11,7 @@ export default async function BlogArticleWrapper({
   children,
 }: {
   readonly article: MDXEntry<Article>
-  children: React.ReactNode
+  readonly children: React.ReactNode
 }) {
   let allArticles = await loadArticles()
   let moreArticles = allArticles
