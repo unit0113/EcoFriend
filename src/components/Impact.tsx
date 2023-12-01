@@ -5,9 +5,9 @@ function Impact({
   children,
   invert = false,
 }: {
-  name: string
-  children: React.ReactNode
-  invert?: boolean
+  readonly name: string
+  readonly children: React.ReactNode
+  readonly invert?: boolean
 }) {
   return (
     <address

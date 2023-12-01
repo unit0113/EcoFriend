@@ -9,10 +9,10 @@ export function PageIntro({
   children,
   centered = false,
 }: {
-  eyebrow: string
-  title: string
-  children: React.ReactNode
-  centered?: boolean
+  readonly eyebrow: string
+  readonly title: string
+  readonly children: React.ReactNode
+  readonly centered?: boolean
 }) {
   return (
     <Container

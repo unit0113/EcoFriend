@@ -43,12 +43,12 @@ function Header({
   toggleRef,
   invert = false,
 }: {
-  panelId: string
-  icon: React.ComponentType<{ className?: string }>
-  expanded: boolean
-  onToggle: () => void
-  toggleRef: React.RefObject<HTMLButtonElement>
-  invert?: boolean
+  readonly panelId: string
+  readonly icon: React.ComponentType<{ className?: string }>
+  readonly expanded: boolean
+  readonly onToggle: () => void
+  readonly toggleRef: React.RefObject<HTMLButtonElement>
+  readonly invert?: boolean
 }) {
   let { logoHovered, setLogoHovered } = useContext(RootLayoutContext)!
 
@@ -101,7 +101,7 @@ function Header({
   )
 }
 
-function NavigationRow({ children }: { children: React.ReactNode }) {
+function NavigationRow({ children }: { readonly children: React.ReactNode }) {
   return (
     <div className="even:mt-px sm:bg-neutral-950">
       <Container>
@@ -115,8 +115,8 @@ function NavigationItem({
   href,
   children,
 }: {
-  href: string
-  children: React.ReactNode
+  readonly href: string
+  readonly children: React.ReactNode
 }) {
   return (
     <Link
@@ -144,7 +144,7 @@ function Navigation() {
   )
 }
 
-function RootLayoutInner({ children }: { children: React.ReactNode }) {
+function RootLayoutInner({ children }: { readonly children: React.ReactNode }) {
   let panelId = useId()
   let [expanded, setExpanded] = useState(false)
   let openRef = useRef<React.ElementRef<'button'>>(null)
@@ -267,7 +267,7 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
   )
 }
 
-export function RootLayout({ children }: { children: React.ReactNode }) {
+export function RootLayout({ children }: { readonly children: React.ReactNode }) {
   let pathname = usePathname()
   let [logoHovered, setLogoHovered] = useState(false)
 

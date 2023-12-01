@@ -13,8 +13,8 @@ export default function Page() {
     const { data: session } = useSession()
 
     // State variables for login input fields
-    const [teamName, setTeam] = useState('')
-    const [ps, setPassword] = useState('')
+    const [teamName, setTeamName] = useState('')
+    const [password, setPassword] = useState('')
     const[ invalidTeam, setInvalidTeam ] = useState(false);
 
     const handleRegister = async (e: any) => {
@@ -27,7 +27,7 @@ export default function Page() {
                 },
                 body: JSON.stringify({
                     teamName: teamName,
-                    password: ps,
+                    password: password,
                     userEmail: session?.user?.email,
                 }),
             });
@@ -43,7 +43,6 @@ export default function Page() {
     };
 
     return (
-        <>
             <div className="mt-12 flex min-h-full flex-1">
                 <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
                     <div className="mx-auto w-full max-w-sm lg:w-96">
@@ -70,8 +69,8 @@ export default function Page() {
                                         </label>
                                         <div className="mt-2">
                                             <input
-                                                onChange={(e) => setTeam(e.target.value)}
-                                                id="name"
+                                                onChange={(e) => setTeamName(e.target.value)}
+                                                id="teamName"
                                                 name="teamName"
                                                 type="teamName"
                                                 required
@@ -122,6 +121,5 @@ export default function Page() {
                     />
                 </div>
             </div>
-        </>
     )
 }

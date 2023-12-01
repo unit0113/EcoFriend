@@ -14,7 +14,7 @@ import muffin from '@/images/muffin.png'
 import run from '@/images/run.jpg'
 import {type Article, loadArticles, type MDXEntry} from '@/lib/mdx'
 
-function Articles({articles}: { articles: Array<MDXEntry<Article>> }) {
+function Articles({articles}: { readonly articles: Array<MDXEntry<Article>> }) {
   return (
     <>
       <SectionIntro
