@@ -13,8 +13,8 @@ export default function Page() {
     const { data: session } = useSession()
 
     // State variables for login input fields
-    const [teamName, setTeam] = useState('')
-    const [ps, setPassword] = useState('')
+    const [teamName, setTeamName] = useState('')
+    const [password, setPassword] = useState('')
     const[ invalidTeam, setInvalidTeam ] = useState(false);
 
     const handleRegister = async (e: any) => {
@@ -27,7 +27,7 @@ export default function Page() {
                 },
                 body: JSON.stringify({
                     teamName: teamName,
-                    password: ps,
+                    password: password,
                     userEmail: session?.user?.email,
                 }),
             });
@@ -69,7 +69,7 @@ export default function Page() {
                                         </label>
                                         <div className="mt-2">
                                             <input
-                                                onChange={(e) => setTeam(e.target.value)}
+                                                onChange={(e) => setTeamName(e.target.value)}
                                                 id="teamName"
                                                 name="teamName"
                                                 type="teamName"

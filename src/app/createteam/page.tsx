@@ -11,7 +11,7 @@ export default function CreateTeam() {
     const router = useRouter();
 
     // State variables for login input fields
-    const [teamName, setTeam] = useState('');
+    const [teamName, setTeamName] = useState('')
     const [pw1, setPw1] = useState('')
     const [pw2, setPw2] = useState('')
     const [pwNotSame, setPwNotSame] = useState(false)
@@ -75,7 +75,7 @@ export default function CreateTeam() {
                                         <div className="mt-2">
                                             <input
                                                 onChange={(e) =>
-                                                    setTeam(e.target.value)}
+                                                    setTeamName(e.target.value)}
                                                 id="teamName"
                                                 name="name"
                                                 type="name"
