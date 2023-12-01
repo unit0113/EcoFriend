@@ -12,6 +12,8 @@ import {Logo, Logomark} from '@/components/Logo'
 import {Impacts} from '@/components/Impact'
 import {SocialMedia} from '@/components/SocialMedia'
 import {LoginBtnHeader} from '@/components/LoginBtnHeader'
+import React, { useMemo } from 'react';
+
 
 const RootLayoutContext = createContext<{
   logoHovered: boolean
@@ -271,8 +273,11 @@ export function RootLayout({ children }: { children: React.ReactNode }) {
   let pathname = usePathname()
   let [logoHovered, setLogoHovered] = useState(false)
 
+  // Memoize the context value
+  const contextValue = useMemo(() => ({ logoHovered, setLogoHovered }), [logoHovered, setLogoHovered])
+
   return (
-    <RootLayoutContext.Provider value={{ logoHovered, setLogoHovered }}>
+    <RootLayoutContext.Provider value={contextValue}>
       <RootLayoutInner key={pathname}>{children}</RootLayoutInner>
     </RootLayoutContext.Provider>
   )

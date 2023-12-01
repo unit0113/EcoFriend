@@ -6,28 +6,31 @@ import {Logo} from '@/components/Logo'
 
 const navigation = [
   {
+    id: '1',
     title: 'Game',
     links: [
-      { title: 'Play', href: '/game' },
-      { title: 'How To', href: '/learn' },
-      { title: 'Multiplayer', href: '/team' },
+      { id: '1', title: 'Play', href: '/game' },
+      { id: '2', title: 'How To', href: '/learn' },
+      { id: '3', title: 'Multiplayer', href: '/team' },
 
     ],
   },
   {
+    id: '2',
     title: 'Company',
     links: [
-        {title: 'Developers', href: '/about'},
-      { title: 'Our Mission', href: '/mission' },
-      { title: 'Contributions', href: '/efforts' },
+      { id: '1',title: 'Developers', href: '/about'},
+      { id: '2', title: 'Our Mission', href: '/mission' },
+      { id: '3', title: 'Contributions', href: '/efforts' },
     ],
   },
   {
+    id: '3',
     title: 'Sustainability',
       links: [
-          { title: 'Climate News', href: '/articles' },
-          { title: 'Volunteer', href: '/volunteer' },
-          { title: 'Donate', href: '/donate' },
+          { id: '1', title: 'Climate News', href: '/articles' },
+          { id: '2', title: 'Volunteer', href: '/volunteer' },
+          { id: '3', title: 'Donate', href: '/donate' },
       ],
   },
 ]
@@ -36,14 +39,14 @@ function Navigation() {
   return (
     <nav>
       <ul className="grid grid-cols-2 gap-8 sm:grid-cols-3">
-        {navigation.map((section, sectionIndex) => (
-          <li key={sectionIndex}>
+        {navigation.map((section) => (
+          <li key={section.id}>
             <div className="font-display text-sm font-semibold tracking-wider text-neutral-950">
               {section.title}
             </div>
             <ul className="mt-4 text-sm text-neutral-700">
-              {section.links.map((link, linkIndex) => (
-                <li key={linkIndex} className="mt-4">
+              {section.links.map((link) => (
+                <li key={link.id} className="mt-4">
                   <Link
                     href={link.href}
                     className="transition hover:text-neutral-950"
