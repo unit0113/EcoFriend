@@ -44,7 +44,7 @@ export function ProfileButton() {
         <DropdownItem key="team">
           <Button
             className="w-full"
-            href="/teams"
+            href="/team"
             onClick={() => console.log('Team')}
           >
             Team

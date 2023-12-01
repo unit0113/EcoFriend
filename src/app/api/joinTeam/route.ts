@@ -1,45 +1,68 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { connectMongoDB } from '@/lib/mongodb'
+import {NextRequest, NextResponse} from 'next/server'
+import {connectMongoDB} from '@/lib/mongodb'
 import Team from '@/models/team'
 import User from '@/models/user'
 import bcrypt from 'bcryptjs'
 
 export async function POST(req: NextRequest) {
-  try {
-    await connectMongoDB()
-    const { name, password, userEmail } = await req.json()
+    try {
 
-    // Find team with provided team name
-    const team = await Team.findOne({ name })
+        await connectMongoDB()
 
-    if (!team) {
-      return NextResponse.json({ message: 'Team not found' }, { status: 400 })
-    }
+		if (req.method !== 'POST') {
+			return NextResponse.json(
+                {message: 'Method Error'},
+                {status: 405},
+            )
+		}
 
-    // Confirm provided password is valid
-    const passwordsMatch = await bcrypt.compare(password, team.password)
-    if (!passwordsMatch) {
-      return NextResponse.json(
-        { message: 'Invalid team password' },
-        { status: 403 },
-      )
-    }
+        const {teamName, password, userEmail} = await req.json()
 
-    // Confirm team is not full
-    if (team.members.length >= 4) {
-      return NextResponse.json({ message: 'Team is full' }, { status: 401 })
-    }
+        const team = await Team.findOne({name: teamName})
+        if (!team) {
+            return NextResponse.json(
+                {message: 'Team not found'},
+                {status: 401},
+            )
+        }
+        console.log("Passed existingTeam check");
 
-    // Add user to team, update user info with team id
-    const user = await User.findOne({ userEmail })
-    await team.updateOne({ $push: { members: user._id } })
-    await user.updateOne({ team_id: team._id })
+		// Add user to team, update user info with team id
+		const user = await User.findOne({email: userEmail })
+		if (!user) {
+			return NextResponse.json(
+				{message: 'User not found'},
+				{status: 401},
+			)
+		}
+		console.log("Passed findUser check");
 
-    return NextResponse.json({ message: 'Team Joined' }, { status: 201 })
-  } catch (error) {
-    return NextResponse.json(
-      { message: 'An error occured while joining a team.' },
-      { status: 500 },
-    )
+		// Confirm provided password is valida
+		const passwordsMatch = await bcrypt.compare(password, team.password)
+		if (!passwordsMatch) {
+		return NextResponse.json(
+				{ message: 'Invalid team password' },
+				{ status: 403 },
+			)
+		}
+		console.log("Passed password check");
+
+		// Confirm team is not full
+		if (team.members.length >= 4) {
+		return NextResponse.json({ message: 'Team is full' }, { status: 401 })
+		}
+		console.log("Passed num members");
+
+		await team.updateOne({ $push: { members: user._id } })
+		console.log("Passed update members");
+		await user.updateOne({ team_id: team._id })
+		console.log("Passed update user");
+
+		return NextResponse.json({ message: 'Team Joined' }, { status: 201 })
+	} catch (error) {
+		return NextResponse.json(
+		{ message: 'An error occurred while joining a team.' },
+		{ status: 500 },
+		)
   }
 }
