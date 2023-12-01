@@ -12,6 +12,7 @@ import {loadArticles} from '@/lib/mdx'
 import muffin from '@/images/muffin.png'
 import lily from '@/images/us/lily.jpg'
 import ed from '@/images/us/ed.jpg'
+import christian from '@/images/us/christian.jpg'
 
 
 const team = [
@@ -31,7 +32,7 @@ const team = [
             {
                 name: 'Christian',
                 role: 'Project Manager',
-                image: muffin,
+                image: christian,
             },
             {
                 name: 'Ed',
