@@ -11,7 +11,7 @@ export default function CreateTeam() {
     const router = useRouter();
 
     // State variables for login input fields
-    const [teamName, setTeam] = useState('')
+    const [teamName, setTeam] = useState('');
     const [pw1, setPw1] = useState('')
     const [pw2, setPw2] = useState('')
     const [pwNotSame, setPwNotSame] = useState(false)
@@ -48,7 +48,6 @@ export default function CreateTeam() {
     };
 
     return (
-        <>
             <div className="mt-12 flex min-h-full flex-1">
                 <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
                     <div className="mx-auto w-full max-w-sm lg:w-96">
@@ -78,9 +77,8 @@ export default function CreateTeam() {
                                                 onChange={(e) =>
                                                     setTeam(e.target.value)}
                                                 id="teamName"
-                                                name="teamName"
-                                                type="teamName"
-                                                autoComplete="teamName"
+                                                name="name"
+                                                type="name"
                                                 required
                                                 className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                             />
@@ -156,6 +154,5 @@ export default function CreateTeam() {
                     />
                 </div>
             </div>
-        </>
     )
 }
