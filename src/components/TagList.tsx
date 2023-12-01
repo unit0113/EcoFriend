@@ -4,8 +4,8 @@ export function TagList({
   children,
   className,
 }: {
-  children: React.ReactNode
-  className?: string
+  readonly children: React.ReactNode
+  readonly className?: string
 }) {
   return <ul className={clsx(className, 'flex flex-wrap gap-4')}>{children}</ul>
 }
@@ -14,8 +14,8 @@ export function TagListItem({
   children,
   className,
 }: {
-  children: React.ReactNode
-  className?: string
+  readonly children: React.ReactNode
+  readonly className?: string
 }) {
   return (
     <li
