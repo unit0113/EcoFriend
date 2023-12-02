@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-import {Container} from '@/components/Container'
-import {FadeIn} from '@/components/FadeIn'
-import {Logo} from '@/components/Logo'
+import { Container } from '@/components/Container'
+import { FadeIn } from '@/components/FadeIn'
+import { Logo } from '@/components/Logo'
 
 const navigation = [
   {
@@ -11,24 +11,23 @@ const navigation = [
       { title: 'Play', href: '/game' },
       { title: 'How To', href: '/learn' },
       { title: 'Multiplayer', href: '/team' },
-
     ],
   },
   {
     title: 'Company',
     links: [
-        {title: 'Developers', href: '/about'},
+      { title: 'Developers', href: '/about' },
       { title: 'Our Mission', href: '/mission' },
       { title: 'Contributions', href: '/efforts' },
     ],
   },
   {
     title: 'Sustainability',
-      links: [
-          { title: 'Climate News', href: '/articles' },
-          { title: 'Volunteer', href: '/volunteer' },
-          { title: 'Donate', href: '/donate' },
-      ],
+    links: [
+      { title: 'Climate News', href: '/articles' },
+      { title: 'Volunteer', href: '/volunteer' },
+      { title: 'Donate', href: '/donate' },
+    ],
   },
 ]
 
@@ -37,13 +36,13 @@ function Navigation() {
     <nav>
       <ul className="grid grid-cols-2 gap-8 sm:grid-cols-3">
         {navigation.map((section, sectionIndex) => (
-          <li key={sectionIndex}>
+          <li key={'navigation_' + { sectionIndex }}>
             <div className="font-display text-sm font-semibold tracking-wider text-neutral-950">
               {section.title}
             </div>
             <ul className="mt-4 text-sm text-neutral-700">
               {section.links.map((link, linkIndex) => (
-                <li key={linkIndex} className="mt-4">
+                <li key={'link_' + { linkIndex }} className="mt-4">
                   <Link
                     href={link.href}
                     className="transition hover:text-neutral-950"
@@ -80,8 +79,7 @@ function NewsletterForm() {
         Sign up for our newsletter
       </h2>
       <p className="mt-4 text-sm text-neutral-700">
-        Subscribe to get the latest  news, articles, resources
-          on the climate.
+        Subscribe to get the latest news, articles, resources on the climate.
       </p>
       <div className="relative mt-6">
         <input
