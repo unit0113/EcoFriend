@@ -10,7 +10,7 @@ function Game() {
       }}
     >
       <iframe
-        src="https://itch.io/embed-upload/9070989?color=333333"
+          src="https://itch.io/embed-upload/9221555?color=333333"
         title="Eco Friend"
         allowFullScreen={true}
         width="800"
