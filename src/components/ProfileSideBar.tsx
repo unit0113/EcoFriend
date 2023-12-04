@@ -41,6 +41,14 @@ export default function ProfileSideBar() {
       href: '/profile/deleteUser',
       title: 'Delete Account',
     },
+    {
+      href: '/createteam',
+      title: 'Create Team',
+    },
+    {
+      href: '/jointeam',
+      title: 'Join Team',
+    },
   ]
 
   return (
