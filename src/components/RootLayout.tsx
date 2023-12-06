@@ -1,6 +1,6 @@
 'use client'
 
-import {createContext, useContext, useEffect, useId, useRef, useState,} from 'react'
+import React, {createContext, useContext, useEffect, useId, useMemo, useRef, useState} from 'react'
 import Link from 'next/link'
 import {usePathname} from 'next/navigation'
 import clsx from 'clsx'
@@ -271,8 +271,10 @@ export function RootLayout({ children }: { readonly children: React.ReactNode })
   let pathname = usePathname()
   let [logoHovered, setLogoHovered] = useState(false)
 
+  const obj = useMemo(() => ({logoHovered, setLogoHovered}), []); // value is cached by useMemo
+
   return (
-    <RootLayoutContext.Provider value={{ logoHovered, setLogoHovered }}>
+      <RootLayoutContext.Provider value={obj}>
       <RootLayoutInner key={pathname}>{children}</RootLayoutInner>
     </RootLayoutContext.Provider>
   )
