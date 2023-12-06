@@ -141,7 +141,7 @@ function Navigation() {
   return (
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
-        <NavigationItem href="/about">The Game</NavigationItem>
+        <NavigationItem href="/game">The Game</NavigationItem>
         <NavigationItem href="/learn">Learn More</NavigationItem>
       </NavigationRow>
       <NavigationRow>
